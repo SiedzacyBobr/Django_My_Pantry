@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+  to the kitchen
+{% endblock %}
+
+
+{% block headstall %} Przenoszenie productu do kuchni {% endblock %}
+
+
+{% block content %}
+<div> Obecnie w bazie danych dla produktu: </div>
+<div> {{ pk_product}} jest {{ pk_product.quty }} szt. {{pk_product.unit}}</div>
+
+<div>
+<form  method="POST">
+{% csrf_token %}
+{{form.as_table}}
+<button type="submit"> Do Kuchni </button>
+</form>
+</div>
+
+
+
+{% endblock %}

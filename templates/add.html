@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+    adding
+{% endblock %}
+
+{% block headstall %} Dodawanie produktów do spiżarni {% endblock %}
+
+{% block content %}
+
+<form method="POST" style="text-align: center;">
+    
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit"> Zapisz </button>
+    <a href="{% url 'my_pantry' %}"> Powrót </a>
+
+</form>
+
+{% endblock %}
+

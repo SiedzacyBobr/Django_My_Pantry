@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block title %}
+  delete
+{% endblock %}
+
+
+{% block headstall %} Usuwanie produktow {% endblock %}
+
+
+
+{% block content %}
+
+<form method="post">
+  {% csrf_token %} 
+
+  <div id="alert">
+    Czy jesteś pewien że chcesz usunąć z  swojej spiżarni: <br> <br>  {{pk_product}}   <br>
+  </div>
+
+  <div>
+  <button type="submit" class="btn btn-danger"> usuń </button>
+  <a href="{% url 'my_pantry' %}"> Powrót </a>
+  </div>
+
+</form> 
+
+{% endblock %}

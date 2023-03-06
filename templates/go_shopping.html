@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+{% block title %}
+    go
+{% endblock %}
+
+{% block headstall %} Na zakupy huraaaa !!! {% endblock %}
+
+{% block content %}
+  <table>
+    <tr>
+      <th style="width: 160px;"> Product </th>
+      <th style="width: 50px;"> ilość </th>
+      <th style="width: 50px;"> kupione </th>
+    </tr>
+
+    {% for x in for_safety %}
+    <tr>
+      
+      <td> {{ x.name }} </td>
+      <td> {{ x.sefty}}--{{x.quty}}</td>
+      <td><input type="text" style="width: 20px;"></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="3" style="text-align: center;"><button onclick="window.print()">Wydrukuj liste zakupów</button></td>
+    </tr>
+
+</table>
+{% endblock %}
+

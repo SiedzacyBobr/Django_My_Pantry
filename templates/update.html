@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+    update
+{% endblock %}
+
+
+{% block headstall %} Edytowanie producków {% endblock %}
+
+
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %} 
+{{ form.as_p }}
+<button type="submit"> Aktualizuj </button>
+<a href="{% url 'my_pantry' %}"> Powrót </a>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+
+<link rel="stylesheet" href = "{% static 'main_satic.css' %}">
+<script src="{% static 'main_javaskript.js'%}"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<div id="contener">
+
+    <div id="navigate" class="topnav">
+    <a href="/"> Home </a>
+    <a href="/my_pantry"> Pantry </a>
+    <a href="/go"> Go to </a>
+    <a href="/with"> Retur from</a>
+    <a href="/adding"> Add </a>
+    <!-- <a href="/update"> Update </a> -->
+    <!-- <a href="/delete"> Del </a> -->
+    </div>
+
+    <div id="headstall">{% block headstall %}{% endblock %}</div>
+    <div id="working">{% block content %}{% endblock %}</div>
+</div>
+
+
+
+</body>
+</html>
