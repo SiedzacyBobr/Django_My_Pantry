@@ -7,6 +7,7 @@
 
 {% block headstall %} Moja Spiżarnia {% endblock %}
 {% block content %}
+
   <table>
     <!-- tr = teble row czyli wiers-->
     <tr>
@@ -16,15 +17,14 @@
       <th style="width: 40px;"> Ilość </th>
       <th style="width: 40px;"> Zapas </th>
       <th> Do przeniesienia</th>
-      <th> Akcja </th>
     </tr>
 
     {% for x in products %}
     <tr>
       <!-- td = teble data czyli komurka z wartością -->
       <td>
-      <a href="/update/{{x.pk}}"> Edytuj </a>
-      <a href="/delete/{{x.pk}}"> Usuń </a>
+      <a id="buttonNav" href="/update/{{x.pk}}"> Edytuj </a>
+      <a id="buttonNav" href="/delete/{{x.pk}}"> Usuń </a>
       </td>
 
       <td>{{x.id}} {{ x.name }} </td>
@@ -34,26 +34,14 @@
       <td>{{ x.sefty }}</td>
 
       <td>
-        <!-- <a href="/test/{{x.pk}}"> dodaj </a> -->
-
-        
-        <form action = "/to_kitchen/{{x.pk}}" method="POST">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit"> Do Kuchni </button>
-        </form>
-
+        <a id="buttonNav" href="/to_kitchen/{{x.pk}}"> Przenieś </a>
       </td>
-
-      <td>  
-          
-      </td>   
 
     </tr>
     
     {% endfor %}
     <tr>
-      <td colspan="6" style="text-align: center;"><a href="/adding"> Dodaj nowy product </a></td>
+      <td colspan="6" style="text-align: center;"><a id="buttonNav" href="/adding"> Dodaj nowy product </a></td>
     </tr>
   </table>
 

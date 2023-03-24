@@ -2,32 +2,42 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<link rel="stylesheet" href = "{% static 'main_satic.css' %}">
-<script src="{% static 'main_javaskript.js'%}"></script>
-
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href = "{% static 'main_satic.css' %}">
+    <script src="{% static 'main_javaskript.js'%}"></script>
 </head>
 
 <body>
-<div id="contener">
 
-    <div id="navigate" class="topnav">
-    <a href="/"> Home </a>
-    <a href="/my_pantry"> Pantry </a>
-    <a href="/go"> Go to </a>
-    <a href="/with"> Retur from</a>
-    <a href="/adding"> Add </a>
+<nav>
+    <a id="buttonNav" href="/"> Home </a>
+    <a id="buttonNav" href="/my_pantry"> Pantry </a>
+    <a id="buttonNav" href="/go"> Go to </a>
+    <a id="buttonNav" href="/with"> Retur from</a>
+    <a id="buttonNav" href="/adding"> Add </a>
     <!-- <a href="/update"> Update </a> -->
     <!-- <a href="/delete"> Del </a> -->
-    </div>
+</nav>
 
-    <div id="headstall">{% block headstall %}{% endblock %}</div>
+
+<article>
+    <!-- <img src="{% static 'image/pantry.jpg' %}" alt="znów coś poszło nie tak." width="150" height="100"> -->
+    <header>{% block headstall %}{% endblock %}</header>
     <div id="working">{% block content %}{% endblock %}</div>
-</div>
+</article>
 
-
+<footer>
+    <address>
+        <a href="mailto:krzysztof.wroblewski.01@gmail.com"> admin: Krzysztof Wróblewski </a>
+        <p>strona utworzona w 2023</p>
+    </address>
+</footer>
+<!-- <figure>
+    <img src="{% static 'image/pantry.jpg' %}" alt="znów coś poszło nie tak." width="150" height="100">
+    <figcaption> To jest ciekawe </figcaption>
+</figure> -->
 
 </body>
 </html>

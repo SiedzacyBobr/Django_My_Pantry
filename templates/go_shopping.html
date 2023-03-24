@@ -11,17 +11,17 @@
     <tr>
       <th style="width: 160px;"> Product </th>
       <th style="width: 50px;"> ilość </th>
-      <th style="width: 50px;"> kupione </th>
+      <th style="width: 50px;"> kupione</th>
     </tr>
 
-    {% for x in for_safety %}
+    {% for key, values in listbuy.items %}
     <tr>
-      
-      <td> {{ x.name }} </td>
-      <td> {{ x.sefty}}--{{x.quty}}</td>
+      <td> {{key}} </td>
+          <td>{{values}}</td>
       <td><input type="text" style="width: 20px;"></td>
     </tr>
     {% endfor %}
+
     <tr>
       <td colspan="3" style="text-align: center;"><button onclick="window.print()">Wydrukuj liste zakupów</button></td>
     </tr>
