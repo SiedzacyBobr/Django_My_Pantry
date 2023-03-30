@@ -3,30 +3,53 @@ from django.template import loader
 from django.http import HttpResponse
 from .models import Products
 from django.db.models import F
-from .forms import ProductsForm, QuantityForm, LiczbaForm
+from .forms import ProductsForm, QuantityForm, QuantitymaxForm
 
 
 def main(request):
     return render(request, 'main.html')
 
+
+def to_kitchen(request, pk):
+    pk_product = Products.objects.get(id=pk)
+
+    if request.method=="POST":
+        
+        form = QuantityForm(request.POST)
+        if form.is_valid():
+            enter_varible = form.cleaned_data['number']
+            pk_product.quty -= enter_varible
+            pk_product.save()
+            return redirect('/my_pantry')
+            
+    else:
+        form = QuantitymaxForm(pk)
+   
+    context={
+            'form':form,
+            'pk_product':pk_product,
+            }
+    
+    return render(request, 'test.html', context)
+
+
 def my_pantry(request):
     products = Products.objects.all().order_by('name')
-   
+
     context={
         'products':products,
     }
     return render(request, 'my_pantry.html' ,context)
 
+
 def with_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
     
-
     context={
         'for_safety':for_safety,
-        
     }
-
     return render(request, 'with_shopping.html', context)
+
 
 def adding(request):
     if request.method == "POST":
@@ -39,7 +62,9 @@ def adding(request):
                 pass
     else:
         form = ProductsForm()
+
     return render(request, 'add.html', {'form':form})
+
 
 def update(request, pk):
     pk_product = Products.objects.get(id=pk)
@@ -51,10 +76,12 @@ def update(request, pk):
             form.save()
             return redirect('/my_pantry')
         
-    context = {'pk_product':pk_product,
-               'form':form}
-    
+    context={
+        'pk_product':pk_product,
+        'form':form
+        }
     return render(request, 'update.html', context)
+
 
 def delete(request, pk):
     pk_product = Products.objects.get(id=pk)
@@ -62,60 +89,25 @@ def delete(request, pk):
     if request.method == 'POST':
         pk_product.delete()
         return redirect('/my_pantry')
-    
-    context = {
+
+    context={
         'pk_product':pk_product
     }
     return render(request, 'delete.html', context)
 
 def go_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
-    print(for_safety)
-
     listbuy=dict()
-    print(listbuy)
 
     for i in for_safety:
         tobuy = i.sefty - i.quty
         name = i.name
-        listbuy[name]=tobuy
-        
-    print(listbuy)
+        if tobuy > 0:
+         listbuy[name]=tobuy
     
     context={
         'for_safety':for_safety,
         'tobuy':tobuy,
         'listbuy':listbuy,
     }
-
     return render(request, 'go_shopping.html', context)
-
-#===================================================================
-
-def to_kitchen(request, pk):
-    pk_product = Products.objects.get(id=pk)
-    max_value = pk_product.quty
-    print(f"udało się max_vaule = {max_value}")
-    
-    if request.method=="POST":
-        print("0 udało się ")
-        form = QuantityForm(request.POST, max_value=pk_product.quty, instance=pk_product)
-        print("1 udało się ")
-        if form.is_valid():
-            enter_varible = form.cleaned_data['quty']
-            pk_product.quty -= enter_varible
-            pk_product.save()
-            print("udało się koniec")
-            return redirect('/my_pantry')
-            
-    else:
-        form = QuantityForm(max_value=max_value, instance=pk_product)
-
-    context={
-        'form':form,
-        'pk_product':pk_product,
-        }
-    
-    return render(request, 'to_kitchen.html', context)
-
-#===============================================================

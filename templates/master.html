@@ -3,9 +3,16 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="Pantry, Home pantry management, Pantry inventory management, Shopping list management "/>
+    <meta name="description" content="A home pantry management application that automatically, generates a shopping list as needed. "/>
+    <meta name="author" content="Krzyszof Wróblewski"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href = "{% static 'main_satic.css' %}">
+
+    <link rel="stylesheet" href = "{% static 'main_satic.css' %}"/>
+    
     <script src="{% static 'main_javaskript.js'%}"></script>
 </head>
 
@@ -16,17 +23,14 @@
     <a id="buttonNav" href="/my_pantry"> Pantry </a>
     <a id="buttonNav" href="/go"> Go to </a>
     <a id="buttonNav" href="/with"> Retur from</a>
-    <a id="buttonNav" href="/adding"> Add </a>
-    <!-- <a href="/update"> Update </a> -->
-    <!-- <a href="/delete"> Del </a> -->
 </nav>
 
-
+<main>
 <article>
-    <!-- <img src="{% static 'image/pantry.jpg' %}" alt="znów coś poszło nie tak." width="150" height="100"> -->
     <header>{% block headstall %}{% endblock %}</header>
     <div id="working">{% block content %}{% endblock %}</div>
 </article>
+</main>
 
 <footer>
     <address>
@@ -34,10 +38,6 @@
         <p>strona utworzona w 2023</p>
     </address>
 </footer>
-<!-- <figure>
-    <img src="{% static 'image/pantry.jpg' %}" alt="znów coś poszło nie tak." width="150" height="100">
-    <figcaption> To jest ciekawe </figcaption>
-</figure> -->
 
 </body>
 </html>

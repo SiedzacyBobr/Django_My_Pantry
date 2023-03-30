@@ -10,7 +10,8 @@
 
 <form method="POST" style="text-align: center;">
     
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %}
+    {{ form.as_p }}
     <button type="submit"> Zapisz </button>
     <a href="{% url 'my_pantry' %}"> Powrót </a>
 
