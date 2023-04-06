@@ -3,29 +3,34 @@
 {% block title %}
     go
 {% endblock %}
-
-{% block headstall %} Na zakupy huraaaa !!! {% endblock %}
+{% block headstall %} Lista Zakupów {% endblock %}
 
 {% block content %}
-  <table>
-    <tr>
-      <th style="width: 160px;"> Product </th>
-      <th style="width: 50px;"> ilość </th>
-      <th style="width: 50px;"> kupione</th>
-    </tr>
 
-    {% for key, values in listbuy.items %}
-    <tr>
-      <td> {{key}} </td>
-          <td>{{values}}</td>
-      <td><input type="text" style="width: 20px;"></td>
-    </tr>
-    {% endfor %}
+  {% if  varisempty == 0 %}
+  <header> Spiżarnia jest pełna </header>
 
-    <tr>
-      <td colspan="3" style="text-align: center;"><button onclick="window.print()">Wydrukuj liste zakupów</button></td>
-    </tr>
+    {% else %}
+        <table>
+          <tr>
+            <th> Product </th>
+            <th> ilość </th>
+            <th> kupione</th>
+          </tr>
 
-</table>
+          {% for key, values in listbuy.items %}
+          <tr>
+            <td> {{key}} </td>
+                <td>{{values}}</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="3" style="text-align: center;"><button onclick="window.print()">Wydrukuj liste zakupów</button></td>
+          </tr>
+      </table> 
+  {% endif %}
+
 {% endblock %}
+
 

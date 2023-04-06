@@ -9,30 +9,6 @@ from .forms import ProductsForm, QuantityForm, QuantitymaxForm
 def main(request):
     return render(request, 'main.html')
 
-
-def to_kitchen(request, pk):
-    pk_product = Products.objects.get(id=pk)
-
-    if request.method=="POST":
-        
-        form = QuantityForm(request.POST)
-        if form.is_valid():
-            enter_varible = form.cleaned_data['number']
-            pk_product.quty -= enter_varible
-            pk_product.save()
-            return redirect('/my_pantry')
-            
-    else:
-        form = QuantitymaxForm(pk)
-   
-    context={
-            'form':form,
-            'pk_product':pk_product,
-            }
-    
-    return render(request, 'test.html', context)
-
-
 def my_pantry(request):
     products = Products.objects.all().order_by('name')
 
@@ -42,16 +18,47 @@ def my_pantry(request):
     return render(request, 'my_pantry.html' ,context)
 
 
+def to_kitchen(request, pk):
+    pk_product = Products.objects.get(id=pk)
+    quty = int(request.POST['quty'])
+    pk_product.quty -= quty
+    pk_product.save()
+
+    products = Products.objects.all().order_by('name')
+   
+    context={
+            'products':products,
+            }
+    
+    return render(request, 'my_pantry.html', context)
+
+
 def with_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
     
     context={
         'for_safety':for_safety,
     }
+    return render(request, 'with_shopping.html', context, print(f"renderewanie strony z views.py")) #good
+
+def action_shopping(request, pk):
+    pk_product = Products.objects.get(id=pk)
+    quty = int(request.POST['quty'])
+
+    pk_product.quty += quty
+    pk_product.save()
+
+    for_safety = Products.objects.filter(quty__lte=F("sefty"))
+
+    context={
+        'for_safety':for_safety
+    }
+
     return render(request, 'with_shopping.html', context)
 
 
 def adding(request):
+
     if request.method == "POST":
         form = ProductsForm(request.POST)
         if form.is_valid():
@@ -98,16 +105,27 @@ def delete(request, pk):
 def go_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
     listbuy=dict()
+    varisempty=1
+    print(f'line 109 {varisempty} {type(varisempty)}')
 
-    for i in for_safety:
-        tobuy = i.sefty - i.quty
-        name = i.name
-        if tobuy > 0:
-         listbuy[name]=tobuy
+    if len(for_safety) == 0:
+        tobuy = 1
+        varisempty=0
+        print(f'line 114 {varisempty}')
+
+    else:
+        print(f'line 116 {varisempty}')
+        for i in for_safety:
+            tobuy = i.sefty - i.quty
+            name = i.name
+            if tobuy > 0:
+                listbuy[name]=tobuy
     
     context={
+        'varisempty': varisempty,
         'for_safety':for_safety,
         'tobuy':tobuy,
         'listbuy':listbuy,
     }
+    print(f'line 130 {varisempty}')
     return render(request, 'go_shopping.html', context)

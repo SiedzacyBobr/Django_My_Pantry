@@ -10,4 +10,6 @@ urlpatterns = [
     path('go/', views.go_shopping, name='go'),
     path('with/', views.with_shopping, name='with'),
     path('to_kitchen/<int:pk>/', views.to_kitchen, name='to_kitchen'),
+    path('action_shopping/<int:pk>/', views.action_shopping, name='action_shopping')
 ]
+print(f"tworzenie strony urls.py")
