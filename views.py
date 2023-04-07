@@ -3,7 +3,7 @@ from django.template import loader
 from django.http import HttpResponse
 from .models import Products
 from django.db.models import F
-from .forms import ProductsForm, QuantityForm, QuantitymaxForm
+from .forms import ProductsForm
 
 
 def main(request):
@@ -35,11 +35,17 @@ def to_kitchen(request, pk):
 
 def with_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
+    varisempty=1
+
+    if len(for_safety) == 0:
+        varisempty=0
     
     context={
+        'varisempty':varisempty,
         'for_safety':for_safety,
     }
-    return render(request, 'with_shopping.html', context, print(f"renderewanie strony z views.py")) #good
+    print(varisempty)
+    return render(request, 'with_shopping.html', context)
 
 def action_shopping(request, pk):
     pk_product = Products.objects.get(id=pk)

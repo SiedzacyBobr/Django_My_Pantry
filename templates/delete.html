@@ -11,16 +11,16 @@
 
 {% block content %}
 
-<form method="post">
+<form method="post" class="text-center">
   {% csrf_token %} 
 
-  <div id="alert">
-    Czy jesteś pewien że chcesz usunąć z  swojej spiżarni: <br> <br>  {{pk_product}}   <br>
+  <div class="alert-warning">
+    Czy jesteś pewien że chcesz usunąć z swojej spiżarni produkt: {{pk_product}}
   </div>
 
   <div>
-  <button type="submit" class="btn btn-danger"> usuń </button>
-  <a href="{% url 'my_pantry' %}"> Powrót </a>
+  <button type="submit" class="btn btn-danger"> Usuń </button>
+  <a class="btn btn-primary" href="{% url 'my_pantry' %}"> Powrót </a>
   </div>
 
 </form> 

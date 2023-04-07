@@ -10,33 +10,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 
-    <link rel="stylesheet" href = "{% static 'main_satic.css' %}"/>
+    <!-- <link rel="stylesheet" href = "{% static 'dupa.css' %}"/>
     
-    <script src="{% static 'main_javaskript.js'%}"></script>
+    <script src="{% static 'main_javaskript.js'%}"></script> -->
 </head>
 
 <body>
 
-<nav>
-    <a id="buttonNav" href="/"> Home </a>
-    <a id="buttonNav" href="/my_pantry"> Pantry </a>
-    <a id="buttonNav" href="/go"> Go to </a>
-    <a id="buttonNav" href="/with"> Return from</a>
+<nav class="container-lg my-2">
+    <ul class="nav bg-info">
+    <li class="nav-item">
+    <a class="nav-link link-light" href="/"> Start </a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link link-light" href="/my_pantry"> Spiżarnia </a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link link-light" href="/go"> Na zakupy </a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link link-light" href="/with"> Po zakupach </a>
+    </li>
+    </ul>
 </nav>
 
 <main>
-<article>
-    <header>{% block headstall %}{% endblock %}</header>
-    <div id="working">{% block content %}{% endblock %}</div>
+<article class="container">
+    <header class="text-center h1">{% block headstall %}{% endblock %}</header>
+    <section>{% block content %}{% endblock %}</section>
 </article>
 </main>
 
-<footer>
-    <address>
-        <a href="mailto:krzysztof.wroblewski.01@gmail.com"> admin: Krzysztof Wróblewski </a>
-        <p>strona utworzona w 2023</p>
+<footer class="container-lg card-footer">
+    <div class="row">
+    <address class="col">
+    <a href="mailto:krzysztof.wroblewski.01@gmail.com"> admin: Krzysztof Wróblewski </a>
     </address>
+    <p class="col" style="text-align: right;">strona utworzona w 2023</p>
+    </div>
 </footer>
 
 </body>

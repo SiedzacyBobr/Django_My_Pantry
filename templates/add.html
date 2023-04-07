@@ -7,15 +7,14 @@
 {% block headstall %} Dodawanie produktów do spiżarni {% endblock %}
 
 {% block content %}
-
-<form method="POST" style="text-align: center;">
     
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit"> Zapisz </button>
-    <a href="{% url 'my_pantry' %}"> Powrót </a>
-
-</form>
+        <form method="POST" class="form-control form-control-sm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success btn-sm"> Dodaj </button>
+            <a class="btn btn-primary btn-sm " href="{% url 'my_pantry' %}"> Powrót </a>
+        </form>
+    
 
 {% endblock %}
 

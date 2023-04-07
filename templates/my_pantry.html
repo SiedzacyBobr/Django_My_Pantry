@@ -8,46 +8,40 @@
 {% block headstall %} Moja Spiżarnia {% endblock %}
 {% block content %}
 
-  <table>
-    <!-- tr = teble row czyli wiers-->
-    <tr>
-      <!-- teble header = tytułu kolumn -->
-      <th> operacja </th>
-      <th> Id </th>
+  <table class="table table-hover">
+    <tr class="text-center">
+      <th> Operacje </th>
       <th> Nazwa produktu </th>
-      <th> Stock</th>
-      <th> Seftystock </th>
-      <th> Do kuchni </th>
+      <th> Do kuchni</th>
+      <th> W spiżarni </th>
+      <th> Żelazny zapas</th>
     </tr>
 
     {% for x in products %}
     <tr>
       <!-- td = teble data czyli komurka z wartością -->
       <td>
-      <a id="buttonNav" href="/update/{{x.pk}}"> Edytuj </a>
-      <a id="buttonNav" href="/delete/{{x.pk}}"> Usuń </a>
+      <a href="/update/{{x.pk}}" class="btn btn-warning btn-sm"> Edytuj </a>
+      <a href="/delete/{{x.pk}}" class="btn btn-danger btn-sm"> Usuń </a>
       </td>
-      <td>{{x.id}}</td>
 
       <td>{{ x.name }}</td>
 
-      <td>{{ x.quty }}</td>
+      <td><form action="{% url 'to_kitchen' x.id %}" method="post" class="row">
+        {% csrf_token %}
+        <input class="col form-control form-control-sm border mx-1" type="number" name="quty" min="0" max="{{x.quty}}" value="0" >
+        <button class="col btn btn-primary btn-sm mx-1" type="submit" >Wyjmij</button>
+      </form></td>
 
-      <td>{{ x.sefty }}</td>
+      <td class="text-center">{{ x.quty }}</td>
 
-      <td>
-        <form action="{% url 'to_kitchen' x.id %}" method="post">
-          {% csrf_token %}
-          <input type="number" name="quty" min="0" max="{{x.quty}}" value="0">
-          <button type="submit"> Wyjmij z spiżarni</button>
-        </form>
-      </td>
+      <td class="text-center">{{ x.sefty }}</td>
 
     </tr>
     
     {% endfor %}
-    <tr>
-      <td colspan="6" style="text-align: center;"><a id="buttonNav" href="/adding"> Dodaj nowy product </a></td>
+    <tr class="text-center">
+      <td colspan="6"><a href="/adding" class="btn btn-success btn-sm"> Dodaj nowy product </a></td>
     </tr>
   </table>
 

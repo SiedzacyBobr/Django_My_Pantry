@@ -10,11 +10,11 @@
 
 {% block content %}
 
-<form method="POST" style="text-align: center;">
+<form method="POST" class="form-control form-control-sm">
 {% csrf_token %} 
 {{ form.as_p }}
-<button type="submit"> Aktualizuj </button>
-<a href="{% url 'my_pantry' %}"> Powrót </a>
+<button type="submit" class="btn btn-success btn-sm"> Aktualizuj </button>
+<a class="btn btn-primary btn-sm " href="{% url 'my_pantry' %}"> Powrót </a>
 </form>
 
 

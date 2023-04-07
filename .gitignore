@@ -5,3 +5,4 @@ apps.py
 lokalhost_entry.py
 tests.py
 migrations
+static

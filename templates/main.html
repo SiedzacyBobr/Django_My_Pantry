@@ -7,37 +7,37 @@
 {% block headstall %}Spiżarnia Domowa{% endblock %}
 
 {% block content %}
-    <p>Idea powstania spiżarnik powstała przed pójściem na zakupy<br> 
-      Całą myśl sprowokowało pytanie: "czy jest jeszcze cukiej" <br>
-      No jest, ale ile i czy to wystarczającą czy już za mało?</p>
+<article class=" container p-3 my-3 card bg-light col-sm-7">
+  <header class="card-title h4"> Idea powstania </header>
+  <p class="card-text">
+    Ideą jaka przyświecała temu programowi jest po pierwsze
+     automatyczne generowanie listy zakupów.
+      Oczywiście by mogła być wygenerowana lista
+       potrzeba jest sprawdzić ile jest towaru w spiżarni i się zaczęło.</p>
+</article>
 
-     <p> Aplikacja ma pomóc w robioniu zakupów. </p>
-    <hr>
-    <p>Oco tu chodzi ?</p>
-    <from>
-      <label for="name">Suwak:</label>
-      <input type="range" id="name" min="0" max="100" value="75">
-    </from>
-    <hr>
-      <p>Sa trzy lokalizacje produktów: <br>
-      Sklep, Spiżarnia i Kuchnia<br>
-      1. Zasoby w sklepach są dostępne za pieniądze <br>
-      2. zapasy w Spiżarni to żelazny zapas. <br>
-      3. Kuchnia to miejsce spożądzania posiłków</p>
-      <hr>
+
+<article class=" container p-3 my-3 card bg-light col-sm-7">
+  <header class="card-title h4"> Główne cele </header>
+  <p class="card-text">
+    Automatyczne generowanie listy zakupów, drukowanie lub kożystanie z tel.
+    Łatwość w dodawaniu i odejmowaniu productów w magazynie kożystając z tel.</p>
+</article>
+
+<article class=" container p-3 my-3 card bg-light col-sm-7">
+  <header class="card-title h4"> Zasady działania </header>
+  <p class="card-text">
+    <ol>Sa trzy lokalizacje produktów:
+      <li>Sklep - lokacja z której uzupełnia się spiżarnię</li>
+      <li>Spiżarnia - lokacja z której uzupełnia sie kuchnię</li>
+      <li>Kochnia - lokacja utylizacji produktów przez konsumpcje</li>
+    </ol>
+  </p>
+  <p class="card-text">
+    Aplikacja liczy różnicę mięzy ilością productu w zpiżarni do zadeklarowanego przez użytkownika żelaznego zapasu.
+    Gdy wynik jest ujemny generuje listę zakupów z określoną ilością jaka jest potrzeba do uzupełnienia żelaznego zapasu.
+    W założeniu z spiżarni do kuchni przenosi się całe opakowania np. 1kg cukru czy 1 puszka groszku.
+  </p>
+</article>    
       
-      <p><b>Aplikacja sprawdza stan Spiżarni<br>
-      Gdy czegoś jest już mniej generuje listę zakupów.<br>
-      Teoretycznie wyjmując z spiżarni zabieramy całe opakowania do kuchni. </b><br>
-      I odnotowujemy to w apkacji z założenia ma być to proste. <br>
-      Lista zakupów jest generowana w oparciu różnice <br> między zakładanym żelaznym zapasem a stanem faktycznym </p>
-      <p>1</p>
-      <p>2</p>
-      <p> 3</p>
-      <p>4</p>
-      <p>5</p>
-      <p> 6</p>
-      <p>7</p>
-      <p>8</p>
-      <p> 9</p>
 {% endblock %}
