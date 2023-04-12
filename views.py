@@ -4,11 +4,13 @@ from django.http import HttpResponse
 from .models import Products
 from django.db.models import F
 from .forms import ProductsForm
-
+from django.contrib.auth.decorators import login_required
 
 def main(request):
     return render(request, 'main.html')
 
+
+@login_required
 def my_pantry(request):
     products = Products.objects.all().order_by('name')
 
@@ -18,6 +20,7 @@ def my_pantry(request):
     return render(request, 'my_pantry.html' ,context)
 
 
+@login_required
 def to_kitchen(request, pk):
     pk_product = Products.objects.get(id=pk)
     quty = int(request.POST['quty'])
@@ -33,6 +36,7 @@ def to_kitchen(request, pk):
     return render(request, 'my_pantry.html', context)
 
 
+@login_required
 def with_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
     varisempty=1
@@ -47,6 +51,8 @@ def with_shopping(request):
     print(varisempty)
     return render(request, 'with_shopping.html', context)
 
+
+@login_required
 def action_shopping(request, pk):
     pk_product = Products.objects.get(id=pk)
     quty = int(request.POST['quty'])
@@ -63,6 +69,7 @@ def action_shopping(request, pk):
     return render(request, 'with_shopping.html', context)
 
 
+@login_required
 def adding(request):
 
     if request.method == "POST":
@@ -79,6 +86,7 @@ def adding(request):
     return render(request, 'add.html', {'form':form})
 
 
+@login_required
 def update(request, pk):
     pk_product = Products.objects.get(id=pk)
     form = ProductsForm(instance=pk_product)
@@ -96,6 +104,7 @@ def update(request, pk):
     return render(request, 'update.html', context)
 
 
+@login_required
 def delete(request, pk):
     pk_product = Products.objects.get(id=pk)
 
@@ -108,6 +117,8 @@ def delete(request, pk):
     }
     return render(request, 'delete.html', context)
 
+
+@login_required
 def go_shopping(request):
     for_safety = Products.objects.filter(quty__lte=F("sefty"))
     listbuy=dict()

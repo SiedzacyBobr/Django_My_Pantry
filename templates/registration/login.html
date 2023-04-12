@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+  logowanie
+{% endblock %}
+
+
+{% block headstall %} Logowanie do mojej spiżarni {% endblock %}
+
+{% block content %}
+
+<!-- <div class="container my-3 border border-1 p-3">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> Tam do licha !</strong>{{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>      -->
+
+<div class="container mt-3">
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label class="form-label" for="username">Użytkownik: </label>
+        <input class="form-control" id="username" name="username" type="text" placeholder="Wpisz zwoje imie">
+    </div>
+    <div>
+        <label class="form-label mt-3" for="password">Hasło: </label>
+        <input class="form-control" id="password" name="password" type="password" placeholder="wpis swoje hasło">
+    </div>
+    <div>
+    <input class="btn btn-primary btn-sm my-3" type="submit"  value="Zaloguj"> 
+    </div>
+</form>
+</div>
+{% endblock %}

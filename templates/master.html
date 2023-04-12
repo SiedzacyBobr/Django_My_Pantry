@@ -21,27 +21,48 @@
 
 <body>
 
-<nav class="container-lg my-2">
-    <ul class="nav bg-info">
-    <li class="nav-item">
-    <a class="nav-link link-light" href="/"> Start </a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link link-light" href="/my_pantry"> Spiżarnia </a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link link-light" href="/go"> Na zakupy </a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link link-light" href="/with"> Po zakupach </a>
-    </li>
+<nav class=" row navclass my-1 pt-2 bg-primary">
+    <div class="col">
+    <ul class="nav nav-tabs ">
+        <li class="nav-item">
+        <a class="nav-link link-light" href="/"> Start </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link link-light" href="/my_pantry"> Spiżarnia </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link link-light" href="/go"> Na zakupy </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link link-light" href="/with"> Po zakupach </a>
+        </li>
     </ul>
+    </div>
+    {% if user.is_authenticated %}
+    <div class=" col nav justify-content-end">
+        <li class="nav-item " >
+        <a class=" btn btn-warning btn-sm" href="/logout"> Wylogowanie </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link link-light" href="#"> Zalogowany użytkownik: {{ user.username }}</a>
+        </li>
+        {% else %}
+        <div class=" col nav justify-content-end">
+        <li class="nav-item">
+        <a class=" btn btn-warning btn-sm mx-2" href="/login"> Logowanie </a>
+        </li>
+    </div>    
+    {%endif%}
+    
 </nav>
 
 <main>
 <article class="container">
     <header class="text-center h1">{% block headstall %}{% endblock %}</header>
-    <section>{% block content %}{% endblock %}</section>
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+    
 </article>
 </main>
 
