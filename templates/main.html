@@ -4,40 +4,107 @@
   my_pantry
 {% endblock %}
 <!-- To jest dopiero początek -->
-{% block headstall %}Spiżarnia Domowa{% endblock %}
+{% block headstall %} Wstęp do aplikacji {% endblock %}
 
 {% block content %}
-<article class=" container p-3 my-3 card bg-light col-sm-7">
-  <header class="card-title h4"> Idea powstania </header>
-  <p class="card-text">
-    Ideą jaka przyświecała temu programowi jest po pierwsze
-     automatyczne generowanie listy zakupów.
-      Oczywiście by mogła być wygenerowana lista
-       potrzeba jest sprawdzić ile jest towaru w spiżarni i się zaczęło.</p>
-</article>
+<div class="row row-cols-1 mt-4 row-cols-md-2 g-4">
+  <div class="col">
+    <article class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-header">Powstanie pomysłu </h5>
+        <p class="card-text">Główne problemy, które skłoniły do napisania aplikacji.</p>
+        <ul>
+          <li>Tródność w przygotowaniu listy zakupów</li>
+          <li>Brak świadomości ile jest donego producku i czy jest</li>
+          <li>Dublowanie niepotrzebne productów</li>
+          <li>Zapominanie o pewnych produktach </li>
+        </ul>
+      </div>
+    </article>
+  </div>
+  <div class="col">
+    <article class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-header">Cele aplikacji</h5>
+        <p class="card-text">Założenia jakie miała spełniać aplikacja po jej wdrożeniu</p>
+            <ul>
+              <li>Wygodny, prosty, dostęp do spisu produktów w sklepie, domu, spiżarni</li>
+              <li>Automatyczne generowanie listy zakupów gdy czegoś zaczyna brakować</li>
+              <li>Łatwość w dodaniu produktów po zrealizowanej liście zakupów</li>
+              <li>Łatwość w wyjmowaniu z spiżarni</li>
+              <li>Łatwość w dodawaniu, edytewaniu i usuwaniu productów z spiżarni</li>
+            </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="col">
+    <article class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-header">Zasada działania</h5>
+        <p class="card-text"> Aplikacja liczy różnicę mięzy ilością productu w zpiżarni do zadeklarowanego przez użytkownika żelaznego zapasu.
+          Gdy wynik jest ujemny generuje listę zakupów z określoną ilością jaka jest potrzeba do uzupełnienia żelaznego zapasu.
+          W założeniu z spiżarni do kuchni przenosi się całe opakowania np. 1kg cukru czy 1 puszka groszku.
+        </p>
+        <ol>Sa trzy lokalizacje produktów:
+          <li>Sklep - lokacja z której uzupełnia się spiżarnię</li>
+          <li>Spiżarnia - lokacja z której uzupełnia sie kuchnię</li>
+          <li>Kochnia - lokacja utylizacji produktów przez konsumpcje</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+
+  <div class="col">
+    <article class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-header">W trakcie implementacji</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <ol>
+          <li> Dodanie wyszukiwania po kategoriach productu </li>
+          <li> Przy dokładnej realizacji listy zakupów, możliwość bezpośredniego dodania do spiżarni. </li>
+          <li> Dodanie możliwości dodawania, edytowania, i usuwania Kategorii </li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</div>
 
 
-<article class=" container p-3 my-3 card bg-light col-sm-7">
-  <header class="card-title h4"> Główne cele </header>
-  <p class="card-text">
-    Automatyczne generowanie listy zakupów, drukowanie lub kożystanie z tel.
-    Łatwość w dodawaniu i odejmowaniu productów w magazynie kożystając z tel.</p>
+<article class="card p-3 my-3 bg-light col-sm-9">
+  <header class="card-header"><i class="fa-regular fa-lightbulb"></i> Inspiracja przez potrzebę </header>
+  
+  <div class="card-body">
+    Niewiem jak to jest u was, ale dla mnie wyście na zakupy to wyzwanie. Najpierw zrobić listę zakupów a potem wyprawa do sklepu. 
+    Często okazyło się po powrocie do domu, że jeszcze mogłem coś kupić bo się kończy a nie zauwarzyłem.
+    <br>
+    I tu pomysł na rozwiązanie osobistego problemu pisząc własną aplikację. 
+    <br><br>
+    <ul>
+      <li>A co jeśli by aplicjacja automatycznie pisała listę zakupów?</li>
+      <li>A co jeśli listę będzie można wydrukować lub otwarzyć w smartfonie?</li>
+      <li>A co jeśli dodawanie do spiżarni zrobionych zakupów to było kilka prostych kliknięcia? </li>
+      <li>A co jeśli wpisywanie nowmych produktów było proste?</li>
+      <li>A co jeśli wyjmowanie produktów z spiżarni również zajmowało kilka prostych kliknięć?</li>
+      <li>A co jeśli edytowanie i usuwanie produktów było bardzo proste?</li>
+    </ul>
+    Czy taka aplikacja rozwiązała by moje problemy?
+    </div>
+
 </article>
+
 
 <article class=" container p-3 my-3 card bg-light col-sm-7">
   <header class="card-title h4"> Zasady działania </header>
   <p class="card-text">
-    <ol>Sa trzy lokalizacje produktów:
-      <li>Sklep - lokacja z której uzupełnia się spiżarnię</li>
-      <li>Spiżarnia - lokacja z której uzupełnia sie kuchnię</li>
-      <li>Kochnia - lokacja utylizacji produktów przez konsumpcje</li>
-    </ol>
+   
   </p>
   <p class="card-text">
-    Aplikacja liczy różnicę mięzy ilością productu w zpiżarni do zadeklarowanego przez użytkownika żelaznego zapasu.
-    Gdy wynik jest ujemny generuje listę zakupów z określoną ilością jaka jest potrzeba do uzupełnienia żelaznego zapasu.
-    W założeniu z spiżarni do kuchni przenosi się całe opakowania np. 1kg cukru czy 1 puszka groszku.
-  </p>
+   
 </article>    
       
 {% endblock %}

@@ -8,12 +8,12 @@
     <meta name="description" content="A home pantry management application that automatically, generates a shopping list as needed. "/>
     <meta name="author" content="Krzyszof Wróblewski"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <title>{% block title %}{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/e515080353.js" crossorigin="anonymous"></script>
+    
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-
+    <title>{% block title %}{% endblock %}</title>
     <!-- <link rel="stylesheet" href = "{% static 'dupa.css' %}"/>
     
     <script src="{% static 'main_javaskript.js'%}"></script> -->
@@ -21,35 +21,35 @@
 
 <body>
 
-<nav class=" row navclass my-1 pt-2 bg-primary">
+<nav class=" row navclass my-1 bg-primary">
     <div class="col">
-    <ul class="nav nav-tabs ">
+    <ul class="nav nav-tabs pt-2">
         <li class="nav-item">
-        <a class="nav-link link-light" href="/"> Start </a>
+        <a class="nav-link link-light" href="/"><i class="fa-solid fa-circle-info"></i> Start </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link link-light" href="/my_pantry"> Spiżarnia </a>
+        <a class="nav-link link-light" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link link-light" href="/go"> Na zakupy </a>
+        <a class="nav-link link-light" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link link-light" href="/with"> Po zakupach </a>
+        <a class="nav-link link-light" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a>
         </li>
     </ul>
     </div>
     {% if user.is_authenticated %}
     <div class=" col nav justify-content-end">
         <li class="nav-item " >
-        <a class=" btn btn-warning btn-sm" href="/logout"> Wylogowanie </a>
+        <a class=" btn btn-warning btn-sm mt-2 " href="/logout"> Wylogowanie  <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link link-light" href="#"> Zalogowany użytkownik: {{ user.username }}</a>
+        <a class="nav-link link-light" href="#"> Zalogowany: <i class="fa-regular fa-user"></i> {{ user.username }} </a>
         </li>
         {% else %}
         <div class=" col nav justify-content-end">
-        <li class="nav-item">
-        <a class=" btn btn-warning btn-sm mx-2" href="/login"> Logowanie </a>
+        <li class="nav-item ">
+        <a class="btn btn-warning btn-sm mt-2 mx-2" href="/login">Logowanie <i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
         </li>
     </div>    
     {%endif%}
@@ -58,7 +58,7 @@
 
 <main>
 <article class="container">
-    <header class="text-center h1">{% block headstall %}{% endblock %}</header>
+    <header class="text-center h1 mt-4 ">{% block headstall %}{% endblock %}</header>
     <section>
         {% block content %}{% endblock %}
     </section>

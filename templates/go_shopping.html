@@ -14,19 +14,19 @@
         <table class="table table-hover">
           <tr>
             <th> Product </th>
-            <th> ilość </th>
-            <th> kupione</th>
+            <th class="text-center"> ilość </th>
+            <th class="text-center"> kupione</th>
           </tr>
 
           {% for key, values in listbuy.items %}
           <tr>
-            <td> {{key}} </td>
-                <td>{{values}}</td>
-            <td><input type="checkbox"></td>
+            <td > {{key}} </td>
+            <td class="text-center">{{values}}</td>
+            <td class="text-center"><input type="checkbox"></td>
           </tr>
           {% endfor %}
           <tr class="text-center">
-            <td colspan="3"><button onclick="window.print()" class="btn btn-success">Wydrukuj liste zakupów</button></td>
+            <td colspan="3"><button onclick="window.print()" class="btn btn-success"> <i class="fa-solid fa-print"></i> Wydrukuj liste zakupów</button></td>
           </tr>
       </table> 
   {% endif %}

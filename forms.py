@@ -1,22 +1,19 @@
 from django import forms
-from .models import Products
+from .models import Products, Kategoria
 from django.db.models import F
-from django.utils.translation import gettext_lazy as _
 
 class ProductsForm(forms.ModelForm):
+
+    name = forms.CharField(label="Nazwa produktu:", initial="np. makaron świderki",)
+    unit = forms.CharField(label=" Jednostka miary:", initial="np. 1kg",)
+    quty = forms.IntegerField(label="Ilość wprowadzana:", min_value=0, max_value=12, )
+    sefty = forms.IntegerField(label="Żelazny zapas", min_value=0, max_value=12, )
+    
     class Meta:
         model = Products
-        fields = ['name','unit','quty', 'sefty', 'category']
-        labels = {
-            'name':_('Nazwa produktu:_____'),
-            'unit':_('Jednostka miary:_____'),
-            'quty':_('Wprowadzana ilość:__'),
-            'sefty':_('Żelazny zapas:________'),
-            'category':_('Kategoria:____________'),
-        }
-        placeholder= {
-            "name": _("Some useful help text."),
-            }
+        fields = '__all__'
+        exclude = ['user']
+        
 
         
 

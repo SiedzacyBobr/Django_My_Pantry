@@ -17,20 +17,20 @@
             <tr>
               <th> Nazwa Productu </th>
               <th> Zakupiona ilość </th>
-              <th> W spiżarni </th>
+              <th class="text-center"> W spiżarni </th>
             </tr>
 
-            {% for x in for_safety %}
+            {% for x in contents_basket %}
             <tr>
               <td>{{x.name}}</td>
               <td>
                 <form action="{% url 'action_shopping' x.id %}" method="POST" class="row" >
                   {% csrf_token %}
                   <input class="col form-control form-control-sm border mx-1" type="number" name="quty" min="0" value="0" >
-                  <button type="submit" class="col btn btn-primary btn-sm"> Dodanie </button>
+                  <button type="submit" class="col btn btn-primary btn-sm"> <i class="fa-regular fa-square-plus"></i> Dodanie </button>
                 </form>
               </td>
-              <td> {{x.quty}}</td>
+              <td class="text-center"> {{x.quty}}</td>
             </tr>
             {% endfor %}
 

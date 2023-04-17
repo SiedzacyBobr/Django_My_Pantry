@@ -20,11 +20,11 @@
     {% endif %}
 </div>      -->
 
-<div class="container mt-3">
+<div class="container mt-5 mb-5 p-2 col-sm-4 border border-1">
 <form method="POST">
     {% csrf_token %}
     <div>
-        <label class="form-label" for="username">Użytkownik: </label>
+        <label class="form-label pt-2" for="username">Użytkownik: </label>
         <input class="form-control" id="username" name="username" type="text" placeholder="Wpisz zwoje imie">
     </div>
     <div>
@@ -32,7 +32,7 @@
         <input class="form-control" id="password" name="password" type="password" placeholder="wpis swoje hasło">
     </div>
     <div>
-    <input class="btn btn-primary btn-sm my-3" type="submit"  value="Zaloguj"> 
+    <input class="btn btn-primary my-3" type="submit"  value="Zaloguj"> 
     </div>
 </form>
 </div>

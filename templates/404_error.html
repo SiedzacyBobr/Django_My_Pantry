@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "master.html" %}
 
-</body>
-</html>
+{% block title %}
+    404 error
+{% endblock %}
+
+{% block headstall %} Błąd 404 {% endblock %}
+
+{% block content %}
+    
+<article class="alert">
+    <p> to jest srona testowa błędu 404 </p>
+</article>
+    
+    
+
+{% endblock %}

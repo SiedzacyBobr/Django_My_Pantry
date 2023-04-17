@@ -5,7 +5,7 @@
 {% endblock %}
 
 
-{% block headstall %} Moja Spiżarnia {% endblock %}
+{% block headstall %} Spiżarnia domowa <a href="/adding" class="btn btn-success "> <i class="fa-regular fa-square-plus"></i> Dodaj nowy product </a>{% endblock %}
 {% block content %}
 
   <table class="table table-hover">
@@ -21,8 +21,8 @@
     <tr>
       <!-- td = teble data czyli komurka z wartością -->
       <td>
-      <a href="/update/{{x.pk}}" class="btn btn-warning btn-sm"> Edytuj </a>
-      <a href="/delete/{{x.pk}}" class="btn btn-danger btn-sm"> Usuń </a>
+      <a href="/update/{{x.pk}}" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i> Edytuj </a>
+      <a href="/delete/{{x.pk}}" class="btn btn-danger btn-sm"><i class="fa-regular fa-trash-can"></i> Usuń</a>
       </td>
 
       <td>{{ x.name }}</td>
@@ -30,7 +30,7 @@
       <td><form action="{% url 'to_kitchen' x.id %}" method="post" class="row">
         {% csrf_token %}
         <input class="col form-control form-control-sm border mx-1" type="number" name="quty" min="0" max="{{x.quty}}" value="0" >
-        <button class="col btn btn-primary btn-sm mx-1" type="submit" >Wyjmij</button>
+        <button class="col btn btn-primary btn-sm mx-1" type="submit" ><i class="fa-regular fa-square-minus"></i> Wyjmij</button>
       </form></td>
 
       <td class="text-center">{{ x.quty }}</td>
@@ -40,9 +40,6 @@
     </tr>
     
     {% endfor %}
-    <tr class="text-center">
-      <td colspan="6"><a href="/adding" class="btn btn-success btn-sm"> Dodaj nowy product </a></td>
-    </tr>
   </table>
 
   
