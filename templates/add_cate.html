@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+    add_cate
+{% endblock %}
+
+{% block headstall %} Dodawanie kategorii {% endblock %}
+
+{% block content %}
+    <div class="container col-sm-5">
+        <form method="POST" class="form form-control form-control-sm m-3 p-3 ">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success"><i class="fa-regular fa-square-plus"></i> Dodaj </button>
+            <a class="btn btn-primary" href="{% url 'category' %}"> <i class="fa-solid fa-person-walking-arrow-loop-left"></i> Powrót </a>
+        </form>
+    </div>
+   
+
+{% endblock %}

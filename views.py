@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Products
+from .models import Products, Kategoria
 from django.db.models import F
-from .forms import ProductsForm
+from .forms import ProductsForm, KategoriaForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -152,3 +152,58 @@ def delete(request, pk):
         'pk_product':pk_product
     }
     return render(request, 'delete.html', context)
+
+@login_required
+def my_category(request):
+    user = request.user.id
+    category = Kategoria.objects.filter(user_id=user).order_by('cate')
+
+    context={
+        'category': category,
+    }
+    return render(request, 'category.html' ,context)
+
+@login_required
+def add_category(request):
+
+    if request.method == "POST":
+        form = KategoriaForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return redirect('/category') 
+    else:
+        form = KategoriaForm()
+
+    return render(request, 'add_cate.html', {'form':form})
+
+@login_required
+def delete_cate(request, pk):
+    pk_cate = Kategoria.objects.get(id=pk)
+
+    if request.method == 'POST':
+        pk_cate.delete()
+        return redirect('/category')
+
+    context={
+        'pk_cate':pk_cate
+    }
+    return render(request, 'delete_cate.html', context)
+
+@login_required
+def update_cate(request, pk):
+    pk_cate = Kategoria.objects.get(id=pk)
+    form = KategoriaForm(instance=pk_cate)
+
+    if request.method == 'POST':
+        form = KategoriaForm(request.POST, instance=pk_cate)
+        if form.is_valid():
+            form.save()
+            return redirect('/category')
+        
+    context={
+        'pk_cate':pk_cate,
+        'form':form
+        }
+    return render(request, 'update.html', context)

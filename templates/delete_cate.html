@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block title %}
+  delete_cate
+{% endblock %}
+
+
+{% block headstall %} <p class=" text-danger h1 "><i class="fa-solid fa-triangle-exclamation"></i> Usuwanie wybranej kategorii</p> {% endblock %}
+
+
+
+{% block content %}
+
+<form method="post" class="text-center">
+  {% csrf_token %} 
+
+  <div class="alert alert-warning p-3 m-3 border border-1">
+    Czy jesteś pewien, że chcesz usunąć kategorie: <strong>{{pk_cate}}</strong>
+  </div>
+
+  <div>
+  <button type="submit" class="btn btn-danger mx-3 mb-3"> <i class="fa-regular fa-trash-can"></i> Tak usuń </button>
+  <a class="btn btn-primary mb-3" href="{% url 'category' %}"> <i class="fa-solid fa-person-walking-arrow-loop-left"></i> Nie usuwaj </a>
+  </div>
+
+</form> 
+
+{% endblock %}

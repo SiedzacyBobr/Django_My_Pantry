@@ -13,6 +13,14 @@ class ProductsForm(forms.ModelForm):
         model = Products
         fields = '__all__'
         exclude = ['user']
+
+class KategoriaForm(forms.ModelForm):
+
+    cate = forms.CharField(label="Nazwa kategorii", help_text="np. sypkie",)
+
+    class Meta:
+        model = Kategoria
+        fields = ['cate']
         
 
         

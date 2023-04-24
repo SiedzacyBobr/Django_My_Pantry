@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+    update_cate
+{% endblock %}
+
+
+{% block headstall %} Edytowanie kategorii {% endblock %}
+
+
+{% block content %}
+
+<form method="POST" class="form-control form-control-sm">
+{% csrf_token %} 
+{{ form.as_p }}
+<button type="submit" class="btn btn-success "><i class="fa-solid fa-thumbs-up"></i> Aktualizuj </button>
+<a class="btn btn-primary " href="{% url 'category' %}"><i class="fa-solid fa-person-walking-arrow-loop-left"></i> Powrót </a>
+</form>
+
+
+{% endblock %}

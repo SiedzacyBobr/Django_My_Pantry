@@ -6,6 +6,7 @@ from django.conf import settings
 
 class Kategoria(models.Model):
     cate = models.CharField(null=True, max_length=100)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f" {self.cate}"
