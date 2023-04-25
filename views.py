@@ -5,19 +5,29 @@ from .forms import ProductsForm, KategoriaForm
 from django.contrib.auth.decorators import login_required
 
 
+
 def main(request):
     return render(request, 'main.html',)
+
+
 
 
 @login_required
 def my_pantry(request):
     user = request.user.id
     products = Products.objects.filter(user_id=user).order_by('name')
+    m_category = Kategoria.objects.filter(user_id=user).order_by('cate')
 
     context={
         'products':products,
+        'm_category':m_category,
     }
     return render(request, 'my_pantry.html' ,context)
+
+@login_required
+def my_filter_category(request):
+    id_cate_f = request.POST['cate.id']
+    print(f"==========================================================> {id_cate_f}")
 
 
 @login_required
@@ -67,24 +77,12 @@ def go_shopping(request):
 @login_required
 def with_shopping(request):
     user = request.user.id
-    for_safety = Products.objects.filter(user_id=user, quty__lte=F("sefty"))
-    contents_basket=[]
-    varisempty=1
-
-    for i in for_safety:
-        if i.sefty-i.quty > 0:
-            contents_basket.append(i)
-    print(f" to jest nowy koszyk: {contents_basket}")
-        
-
-    if len(contents_basket) == 0:
-        varisempty=0
+    for_safety = Products.objects.filter(user_id=user).order_by('name')
     
     context={
-        'varisempty':varisempty,
-        'contents_basket':contents_basket,
+        'for_safety':for_safety
     }
-    print(varisempty)
+    
     return render(request, 'with_shopping.html', context)
 
 
@@ -97,7 +95,7 @@ def action_shopping(request, pk):
     pk_product.quty += quty
     pk_product.save()
 
-    for_safety = Products.objects.filter(user_id=user, quty__lte=F("sefty"))
+    for_safety = Products.objects.filter(user_id=user).order_by('name')
 
     context={
         'for_safety':for_safety
@@ -115,7 +113,7 @@ def adding(request):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
-            return redirect('/my_pantry') 
+            return redirect('/with') 
     else:
         form = ProductsForm()
 

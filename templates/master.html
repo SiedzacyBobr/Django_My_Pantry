@@ -14,62 +14,72 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <title>{% block title %}{% endblock %}</title>
-    <!-- <link rel="stylesheet" href = "{% static 'dupa.css' %}"/>
     
-    <script src="{% static 'main_javaskript.js'%}"></script> -->
 </head>
 
 <body>
 
-<nav class=" row navclass my-1 bg-primary">
-    <div class="col">
-    <ul class="nav nav-tabs pt-2">
-        <li class="nav-item">
-        <a class="nav-link link-light" href="/"><i class="fa-solid fa-circle-info"></i> Start </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link link-light" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link link-light" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link link-light" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link link-light" href="/category"> <i class="fa-solid fa-filter"></i> Kategoria </a>
-            </li>
-    </ul>
-    </div>
-    {% if user.is_authenticated %}
-    <div class=" col nav justify-content-end">
-        <li class="nav-item " >
-        <a class=" btn btn-warning btn-sm mt-2 " href="/logout"> Wylogowanie  <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link link-light" href="#"> Zalogowany: <i class="fa-regular fa-user"></i> {{ user.username }} </a>
-        </li>
-        {% else %}
-        <div class=" col nav justify-content-end">
-        <li class="nav-item ">
-        <a class="btn btn-warning btn-sm mt-2 mx-2" href="/login">Logowanie <i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-        </li>
-    </div>    
-    {%endif%}
-    
-</nav>
+<div class="container">
 
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top border border-light">
+
+        <div class="container-fluid">
+            <ul class="nav nav-tabs">
+
+                <li class="nav-item">
+                <a class="nav-link link-light" href="/"><i class="fa-solid fa-circle-info"></i> Start </a></li>
+                
+                <li class="nav-item">
+                <a class="nav-link link-light" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a></li>
+        
+                <li class="nav-item">
+                <a class="nav-link link-light" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a></li>
+        
+                <li class="nav-item">
+                <a class="nav-link link-light" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a></li>
+        
+                <li class="nav-item">
+                <a class="nav-link link-light" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a></li>
+            
+            </ul>
+        </div>
+
+        {% if user.is_authenticated %}
+
+            <ul class="nav row justify-content-center px-3">
+                
+                    <li class="nav-item"><a class=" col nav-link btn btn-warning btn-sm mx-2" href="/logout"> Wylogowanie <i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+                    
+                    <li class="nav-item"><a class=" col nav-link link-light px-2"> Zalogowany: <i class="fa-regular fa-user"></i> {{ user.username }} </a></li>
+                
+            </ul>
+
+        {% else %}
+
+            <ul class="nav justify-content-center">
+
+                <li class="nav-item"><a class="nav-link btn btn-warning btn-sm mx-2" href="/login">Logowanie <i class="fa-solid fa-arrow-right-to-bracket"></i> </a></li>
+        
+            </ul>
+            
+        {%endif%}
+    
+    </nav>
+</div>
+
+
+<div class="container">
 <main>
-<article class="container">
     <header class="text-center h1 mt-4 ">{% block headstall %}{% endblock %}</header>
     <section>
         {% block content %}{% endblock %}
     </section>
-    
-</article>
 </main>
+</div>
 
-<footer class="container-lg card-footer">
+<div style="width: 100%; height: 75px;"></div>
+
+<footer class="container-fluid bg-secondary fixed-bottom border border-light">
     <div class="row">
     <address class="col">
     <a href="mailto:krzysztof.wroblewski.01@gmail.com"> admin: Krzysztof Wróblewski </a>

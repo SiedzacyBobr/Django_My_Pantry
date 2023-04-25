@@ -8,33 +8,30 @@
 {% block headstall %} Po Zakupach {% endblock %}
 
 {% block content %}
-
-  {% if varisempty == 0 %}
-  <header class="alert alert-success"> Spiżarnia pełna i nic nie potrzeba</header>
-
-      {% else %}
           <table class="table table-hover">
             <tr>
               <th> Nazwa Productu </th>
-              <th> Zakupiona ilość </th>
+              <th class="text-center"> Zakupiona ilość </th>
               <th class="text-center"> W spiżarni </th>
             </tr>
 
-            {% for x in contents_basket %}
+            {% for x in for_safety %}
             <tr>
               <td>{{x.name}}</td>
               <td>
                 <form action="{% url 'action_shopping' x.id %}" method="POST" class="row" >
                   {% csrf_token %}
-                  <input class="col form-control form-control-sm border mx-1" type="number" name="quty" min="0" value="0" >
+                  <input class="col form-control form-control-sm border mx-1" style="width: 50px;" type="number" name="quty" min="0" value="0" >
                   <button type="submit" class="col btn btn-primary btn-sm"> <i class="fa-regular fa-square-plus"></i> Dodanie </button>
                 </form>
               </td>
               <td class="text-center"> {{x.quty}}</td>
             </tr>
+            
             {% endfor %}
-
+            <tr>
+              <td colspan="3"> <a href="/adding" class="btn btn-success "> <i class="fa-regular fa-square-plus"></i> Dodaj nowy product </a></td>
+            </tr>
           </table>
-  {% endif %}
 
 {% endblock %}

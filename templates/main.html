@@ -3,108 +3,66 @@
 {% block title %}
   my_pantry
 {% endblock %}
-<!-- To jest dopiero początek -->
 {% block headstall %} Wstęp do aplikacji {% endblock %}
 
 {% block content %}
-<div class="row row-cols-1 mt-4 row-cols-md-2 g-4">
-  <div class="col">
+<div class="container">
+
+  <div class="row">
     <article class="card">
-      <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-header">Powstanie pomysłu </h5>
-        <p class="card-text">Główne problemy, które skłoniły do napisania aplikacji.</p>
+        <header class="card-header"><i class="fa-solid fa-circle-exclamation"></i> Na początku był problem </header>
+        <p class="card-text"></p>
         <ul>
-          <li>Tródność w przygotowaniu listy zakupów</li>
-          <li>Brak świadomości ile jest donego producku i czy jest</li>
-          <li>Dublowanie niepotrzebne productów</li>
-          <li>Zapominanie o pewnych produktach </li>
+          <li>Trudność w szybkim przygotowaniu listy zakupów. </li>
+          <li>Kłopotliwe pytanie na zakupach: "Czy mamy jeszcze cukier?". </li>
+          <li>Zakup tego czego jest pod dostatkiem, bo akurat było w promocji. </li>
+          <li>Zapomnienie o zakupie rzadko używanego brakującego produktu. </li>
+          <li>Kłopotliwy spis stanu spiżarni, na kartkach lub w Excelu.</li>
         </ul>
       </div>
     </article>
   </div>
-  <div class="col">
-    <article class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-header">Cele aplikacji</h5>
-        <p class="card-text">Założenia jakie miała spełniać aplikacja po jej wdrożeniu</p>
-            <ul>
-              <li>Wygodny, prosty, dostęp do spisu produktów w sklepie, domu, spiżarni</li>
-              <li>Automatyczne generowanie listy zakupów gdy czegoś zaczyna brakować</li>
-              <li>Łatwość w dodaniu produktów po zrealizowanej liście zakupów</li>
-              <li>Łatwość w wyjmowaniu z spiżarni</li>
-              <li>Łatwość w dodawaniu, edytewaniu i usuwaniu productów z spiżarni</li>
-            </ul>
-      </div>
-    </article>
-  </div>
-
-  <div class="col">
-    <article class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-header">Zasada działania</h5>
-        <p class="card-text"> Aplikacja liczy różnicę mięzy ilością productu w zpiżarni do zadeklarowanego przez użytkownika żelaznego zapasu.
-          Gdy wynik jest ujemny generuje listę zakupów z określoną ilością jaka jest potrzeba do uzupełnienia żelaznego zapasu.
-          W założeniu z spiżarni do kuchni przenosi się całe opakowania np. 1kg cukru czy 1 puszka groszku.
-        </p>
-        <ol>Sa trzy lokalizacje produktów:
-          <li>Sklep - lokacja z której uzupełnia się spiżarnię</li>
-          <li>Spiżarnia - lokacja z której uzupełnia sie kuchnię</li>
-          <li>Kochnia - lokacja utylizacji produktów przez konsumpcje</li>
-        </ol>
-      </div>
-    </article>
-  </div>
-
-  <div class="col">
-    <article class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-header">W trakcie implementacji</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <ol>
-          <li> Dodanie wyszukiwania po kategoriach productu </li>
-          <li> Przy dokładnej realizacji listy zakupów, możliwość bezpośredniego dodania do spiżarni. </li>
-          <li> Dodanie możliwości dodawania, edytowania, i usuwania Kategorii </li>
-        </ol>
-      </div>
-    </article>
-  </div>
-</div>
-
-
-<article class="card p-3 my-3 bg-light col-sm-9">
-  <header class="card-header"><i class="fa-regular fa-lightbulb"></i> Inspiracja przez potrzebę </header>
   
-  <div class="card-body">
-    Niewiem jak to jest u was, ale dla mnie wyście na zakupy to wyzwanie. Najpierw zrobić listę zakupów a potem wyprawa do sklepu. 
-    Często okazyło się po powrocie do domu, że jeszcze mogłem coś kupić bo się kończy a nie zauwarzyłem.
-    <br>
-    I tu pomysł na rozwiązanie osobistego problemu pisząc własną aplikację. 
-    <br><br>
-    <ul>
-      <li>A co jeśli by aplicjacja automatycznie pisała listę zakupów?</li>
-      <li>A co jeśli listę będzie można wydrukować lub otwarzyć w smartfonie?</li>
-      <li>A co jeśli dodawanie do spiżarni zrobionych zakupów to było kilka prostych kliknięcia? </li>
-      <li>A co jeśli wpisywanie nowmych produktów było proste?</li>
-      <li>A co jeśli wyjmowanie produktów z spiżarni również zajmowało kilka prostych kliknięć?</li>
-      <li>A co jeśli edytowanie i usuwanie produktów było bardzo proste?</li>
-    </ul>
-    Czy taka aplikacja rozwiązała by moje problemy?
-    </div>
+  <div class="row">
+    <article class="card">
+      <div class="card-body">
+        <header class="card-header"><i class="fa-regular fa-lightbulb"></i> Rozwiązanie problemów - startowa idea </header>
+      Idee aplikacji opiera się na założeniu, że w domu lub kuchni jest wydzielona 
+      przestrzeń na spiżarnię, w której przechowuje się produkty spożywcze o długim czasie przydatności.
+      Produkty z spiżarni są wyjmowane całymi opakowaniami do kuchni, w której następuje ich utylizacja.
+      Gdy stan produktu w spiżarni spada poniżej bezpiecznego progu, generowana jest lista zakupów.
+        <br><br>
+        Podstawowe funkcję aplikacji:
+        <ul>
+          <li>Łatwy i prosty podgląd stanu spiżarni.</li>
+          <li>Automatycznie generowana lista zakupów.</li>
+          <li>Lista zakupów zawsze pod ręką, w smartfonie lub wydrukowana na papieże.</li>
+          <li>Łatwe i proste dodawanie zakupionych produktów do spiżarni.</li>
+          <li>Łatwe i proste zdejmowanie produktów z stanu spiżarni.</li>
+          <li>Łatwe i proste edytowanie i usuwanie produktów z stanu spiżarni.</li>
+          <li>Możliwość obsługi spiżarni na telefonie i komputerze.</li>
+          <li>Wygodne sortowanie po własnych kategoriach </li>
+        </ul>
+      </div>
+	  </article>
+  </div> 
 
-</article>
+  <div class="row">
+    <article class="card">
+      <div class="card-body">
+        <header class="card-header"><i class="fa-solid fa-laptop-code"></i> W trakcie implementacji</header>
+        <p class="card-text">Sugestie pierwszych testerów są ustawione priorytetowo </p>
+        <ol>
+          <li> Dodanie możliwości sortowanie produktów w spiżarni po kategoriach. </li>
+          <li> Dodanie możliwości wyszukiwania produktów po nazwie. </li>
+          <li> Poprawa wyglądu aplikacji na smartfonie by był wygodniejszy. </li>
+          <li> Rozwój konta użytkownika o możliwość zmiany hasła. </li>
+        </ol>
+      </div>
+    </article>
+  </div>
 
-
-<article class=" container p-3 my-3 card bg-light col-sm-7">
-  <header class="card-title h4"> Zasady działania </header>
-  <p class="card-text">
-   
-  </p>
-  <p class="card-text">
-   
-</article>    
+</div>
       
 {% endblock %}
