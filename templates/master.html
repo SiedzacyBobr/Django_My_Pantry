@@ -19,72 +19,63 @@
 
 <body>
 
-<div class="container">
-
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top border border-light">
-
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark ">
         <div class="container-fluid">
-            <ul class="nav nav-tabs">
-
-                <li class="nav-item">
-                <a class="nav-link link-light" href="/"><i class="fa-solid fa-circle-info"></i> Start </a></li>
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                    <a class="nav-link text-light" href="/"><i class="fa-solid fa-circle-info"></i> Start </a>
                 
                 <li class="nav-item">
-                <a class="nav-link link-light" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a></li>
-        
+                    <a class="nav-link text-light" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a>
+                </li>
+                <li class="nav-item">                
+                    <a class="nav-link text-light" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a>
+                </li>
+                <li class="nav-item">        
+                    <a class="nav-link text-light" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a>
+                </li>
+                <li class="nav-item">                
+                    <a class="nav-link text-light" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                <a class="nav-link link-light" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a></li>
-        
+                    <a class="nav-link text-light" href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Wylogowanie  </a> 
+                </li>
                 <li class="nav-item">
-                <a class="nav-link link-light" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a></li>
-        
-                <li class="nav-item">
-                <a class="nav-link link-light" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a></li>
-            
+                    <a class="nav-link text-light"> <i class="fa-regular fa-user"></i> Zalogowany:  {{ user.username }} </a>
+                </li>
+                    
+                {% else %}
+                <li class="nav-item">        
+                    <a class="nav-link text-light" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logowanie  </a>
+                </li>
+                    
+                {%endif%}
+
             </ul>
         </div>
-
-        {% if user.is_authenticated %}
-
-            <ul class="nav row justify-content-center px-3">
-                
-                    <li class="nav-item"><a class=" col nav-link btn btn-warning btn-sm mx-2" href="/logout"> Wylogowanie <i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
-                    
-                    <li class="nav-item"><a class=" col nav-link link-light px-2"> Zalogowany: <i class="fa-regular fa-user"></i> {{ user.username }} </a></li>
-                
-            </ul>
-
-        {% else %}
-
-            <ul class="nav justify-content-center">
-
-                <li class="nav-item"><a class="nav-link btn btn-warning btn-sm mx-2" href="/login">Logowanie <i class="fa-solid fa-arrow-right-to-bracket"></i> </a></li>
-        
-            </ul>
-            
-        {%endif%}
-    
     </nav>
-</div>
+        
 
 
 <div class="container">
 <main>
-    <header class="text-center h1 mt-4 ">{% block headstall %}{% endblock %}</header>
+    <header class="text-center h1 my-3 ">{% block headstall %}{% endblock %}</header>
     <section>
         {% block content %}{% endblock %}
     </section>
 </main>
 </div>
-
 <div style="width: 100%; height: 75px;"></div>
 
-<footer class="container-fluid bg-secondary fixed-bottom border border-light">
+<footer class="container-fluid bg-dark fixed-bottom border border-light">
     <div class="row">
     <address class="col">
-    <a href="mailto:krzysztof.wroblewski.01@gmail.com"> admin: Krzysztof Wróblewski </a>
+    <a class="col" href="mailto:krzysztof.wroblewski.01@gmail.com"> napisz do mnie </a>
     </address>
-    <p class="col" style="text-align: right;">strona utworzona w 2023</p>
+    <p class="col c text-light float-end">strona utworzona w 2023</p>
     </div>
 </footer>
 

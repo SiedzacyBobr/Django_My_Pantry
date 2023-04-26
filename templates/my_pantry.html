@@ -7,52 +7,58 @@
 
 {% block headstall %} Spiżarnia domowa {% endblock %}
 {% block content %}
-<div class="row mb-3 mt-3">
-  
+<div class="container ">
+
+  <form class="row g-3 justify-content-center mb-3" method="post" action="{% url 'select_cate' %}" >
+
     {% csrf_token %}
-    <label class="col" for="kateoria">wybierz kategorie: </label>
+    <div class="col-auto">
+      <label for="ziamianka" class="col-form-label" > Wybór kategorii: </label>
+    </div> 
+    <div class="col-auto">   
+        <select id="ziemianka" class="form-control" name="Cate_ID">
+          <option value="0">Wszystkie kategorie</option>
+          {% for cate in m_category %}
+          <option  value="{{cate.id}}"> {{cate.cate}} </option>
+          {% endfor%}
+    
+        </select>
+    </div>
+    <div class="col-auto">
 
-    <select id="kateoria" name="pobierane_id" class="col form-select mx-3">
-      <option selected> Kategoria do wyboru </option>
-        {% for cate in m_category %}
-
-        <form action="{% url 'select_cate'%}" method="post">
-        <option value="{{cata.id}}">{{cate.id}}  {{cate.cate}}</option>
-
-        {% endfor%}
-    </select>
-    <button class="col btn btn-success btn-sm mx-1" type="submit" ><i class="fa-solid fa-filter"></i> Filtruj </button>
-        </form>
+        <button class="btn btn-success" type="submit"><i class="fa-solid fa-filter"></i> Filtruj </button>
+    </div>
+  </form>
 
 </div>
 
-  <table class="table table-hover">
-    <tr >
+  <table class="table">
+  
+    <tr class="table-secondary">
       <th> Nazwa produktu </th>
       <th class="text-center"> W spiżarni </th>
       <th class="text-center"> Ilość wyciągana ze spiżarni</th>
       <th class="text-center"> Żelazny zapas</th>
       <th> Operacje </th>
-      <th> kategoria </th>
     </tr>
 
     {% for x in products %}
     
     <tr> 
-      <td> {{x.category_id}} {{ x.name }}</td>
+      <td>{{ x.name }}</td>
       <td class="text-center">{{ x.quty }}</td>
-      <td><form action="{% url 'to_kitchen' x.id %}" method="post" class="row">
-        {% csrf_token %}
-        <input class="col form-control form-control-sm border mx-1" Style="width: 50px;" type="number" name="quty" min="0" max="{{x.quty}}" value="0" >
-        <button class="col btn btn-primary btn-sm mx-1" type="submit" ><i class="fa-regular fa-square-minus"></i> Wyjmij</button>
-      </form></td>
+      <td>
+        <form action="{% url 'to_kitchen' x.id %}" method="post" class="row">
+          {% csrf_token %}
+          <input class="col form-control form-control-sm border mx-1" Style="width: 50px;" type="number" name="quty" min="0" max="{{x.quty}}" value="0" >
+          <button class="col btn btn-primary btn-sm mx-1" type="submit" ><i class="fa-regular fa-square-minus"></i> Wyjmij</button>
+        </form>
+      </td>
       <td class="text-center">{{ x.sefty }}</td>
       <td>
         <a href="/update/{{x.pk}}" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i> Edytuj </a>
         <a href="/delete/{{x.pk}}" class="btn btn-danger btn-sm"><i class="fa-regular fa-trash-can"></i> Usuń</a>
       </td>
-      <td>{{x.category_id}}</td>
-
     </tr>
     
     

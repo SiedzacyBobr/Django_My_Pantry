@@ -5,11 +5,12 @@
 {% endblock %}
 
 
-{% block headstall %} Po Zakupach {% endblock %}
+{% block headstall %} Po zakupach {% endblock %}
 
 {% block content %}
+<div class="container col-sm-7">
           <table class="table table-hover">
-            <tr>
+            <tr class="table-secondary">
               <th> Nazwa Productu </th>
               <th class="text-center"> Zakupiona ilość </th>
               <th class="text-center"> W spiżarni </th>
@@ -33,5 +34,5 @@
               <td colspan="3"> <a href="/adding" class="btn btn-success "> <i class="fa-regular fa-square-plus"></i> Dodaj nowy product </a></td>
             </tr>
           </table>
-
+</div>
 {% endblock %}

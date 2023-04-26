@@ -10,8 +10,6 @@ def main(request):
     return render(request, 'main.html',)
 
 
-
-
 @login_required
 def my_pantry(request):
     user = request.user.id
@@ -25,16 +23,36 @@ def my_pantry(request):
     return render(request, 'my_pantry.html' ,context)
 
 @login_required
-def my_filter_category(request):
-    id_cate_f = request.POST['cate.id']
-    print(f"==========================================================> {id_cate_f}")
+def select_category(request):
+    id_cate_f=0
+    user=request.user.id
+    m_category = Kategoria.objects.filter(user_id=user).order_by('cate')
 
+    if request.method == "POST":
+        print("udało się kórka wodna")
+        id_cate_f = int(request.POST.get('Cate_ID', 0))
+            
+    else:
+        id_cate_f = 0
+
+    if id_cate_f == 0:
+        products = Products.objects.filter(user_id=user).order_by('name')
+    else:
+        products = Products.objects.filter(user_id=user, category_id=id_cate_f).order_by('name')
+
+    context = {
+        'products':products,
+        'm_category':m_category,
+    }
+
+    return render(request, 'my_pantry.html', context)
 
 @login_required
 def to_kitchen(request, pk):
     user = request.user.id
     pk_product = Products.objects.get(id=pk)
     quty = int(request.POST['quty'])
+    print(f" test prosty bo głupieje =======================================> {quty}")
     pk_product.quty -= quty
     pk_product.save()
 
@@ -90,6 +108,7 @@ def with_shopping(request):
 def action_shopping(request, pk):
     user = request.user.id
     pk_product = Products.objects.get(id=pk)
+
     quty = int(request.POST['quty'])
 
     pk_product.quty += quty
@@ -106,27 +125,35 @@ def action_shopping(request, pk):
 
 @login_required
 def adding(request):
-
+    
     if request.method == "POST":
-        form = ProductsForm(request.POST)
+        form = ProductsForm(request.user, request.POST)
+        id_kategoria = int(request.POST.get('category'))
+        print(id_kategoria)
+        kategoria = Kategoria.objects.get(id=id_kategoria)
+        print(kategoria)
+
+       
         if form.is_valid():
-            instance = form.save(commit=False)
-            instance.user = request.user
-            instance.save()
+            formularzwypelniony = form.save(commit=False)
+            formularzwypelniony.category = kategoria
+            formularzwypelniony.user = request.user
+            formularzwypelniony.save()
             return redirect('/with') 
     else:
-        form = ProductsForm()
+        form = ProductsForm(request.user)
 
     return render(request, 'add.html', {'form':form})
 
 
 @login_required
 def update(request, pk):
+    user = request.user.id
     pk_product = Products.objects.get(id=pk)
-    form = ProductsForm(instance=pk_product)
+    form = ProductsForm(request.user, instance=pk_product)
 
     if request.method == 'POST':
-        form = ProductsForm(request.POST, instance=pk_product)
+        form = ProductsForm(request.user, request.POST, instance=pk_product)
         if form.is_valid():
             form.save()
             return redirect('/my_pantry')

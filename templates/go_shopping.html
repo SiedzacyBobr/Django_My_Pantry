@@ -3,16 +3,13 @@
 {% block title %}
     go
 {% endblock %}
-{% block headstall %} Lista Zakupów {% endblock %}
+{% block headstall %} Lista zakupów {% endblock %}
 
 {% block content %}
-
-  {% if  varisempty == 0 %}
-  <header class="alert alert-success"> Spiżarnia jest pełna </header>
-
-    {% else %}
+{% if varisempty > 0 %}
+<div class="container border border-info col-sm-7">
         <table class="table table-hover">
-          <tr>
+          <tr class="table-secondary">
             <th> Product </th>
             <th class="text-center"> ilość </th>
             <th class="text-center"> kupione</th>
@@ -29,8 +26,8 @@
             <td colspan="3"><button onclick="window.print()" class="btn btn-success"> <i class="fa-solid fa-print"></i> Wydrukuj liste zakupów</button></td>
           </tr>
       </table> 
-  {% endif %}
-
+</div>
+{% endif %}
 {% endblock %}
 
 
