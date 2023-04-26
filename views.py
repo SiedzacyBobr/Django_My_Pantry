@@ -128,15 +128,8 @@ def adding(request):
     
     if request.method == "POST":
         form = ProductsForm(request.user, request.POST)
-        id_kategoria = int(request.POST.get('category'))
-        print(id_kategoria)
-        kategoria = Kategoria.objects.get(id=id_kategoria)
-        print(kategoria)
-
-       
         if form.is_valid():
             formularzwypelniony = form.save(commit=False)
-            formularzwypelniony.category = kategoria
             formularzwypelniony.user = request.user
             formularzwypelniony.save()
             return redirect('/with') 

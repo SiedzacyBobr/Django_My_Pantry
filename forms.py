@@ -8,7 +8,6 @@ class ProductsForm(forms.ModelForm):
     unit = forms.CharField(label=" Jednostka miary:", help_text="  np. 400g",)
     quty = forms.IntegerField(label="Ilość wprowadzana:", min_value=0, help_text="  Ile jest w chwili jej dodawania",)
     sefty = forms.IntegerField(label="Żelazny zapas:", min_value=0, help_text="  Minimalna ilość jaka zawsze musi być",)
-    category = forms.ChoiceField(label="Kategoria:", help_text="  Wybór kategorii wcześniej dodanej w Kategoria",)
     
     class Meta:
         model = Products
@@ -17,7 +16,8 @@ class ProductsForm(forms.ModelForm):
     
     def __init__ (self, user, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['category'].choices = Kategoria.objects.filter(user_id=user).values_list('id','cate')
+
+        self.fields['category'].choices = Kategoria.objects.filter(user_id=user).values_list('id', 'cate')
 
 
 class KategoriaForm(forms.ModelForm):
