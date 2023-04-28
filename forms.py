@@ -4,10 +4,10 @@ from django.db.models import F
 
 class ProductsForm(forms.ModelForm):
 
-    name = forms.CharField(label="Nazwa produktu:", help_text=" ",)
-    unit = forms.CharField(label=" Jednostka miary:", help_text="  np. 400g",)
-    quty = forms.IntegerField(label="Ilość wprowadzana:", min_value=0, help_text="  Ile jest w chwili jej dodawania",)
-    sefty = forms.IntegerField(label="Żelazny zapas:", min_value=0, help_text="  Minimalna ilość jaka zawsze musi być",)
+    name = forms.CharField(label="Nazwa produktu:", )
+    unit = forms.CharField(label=" Jednostka miary:",)
+    quty = forms.IntegerField(label="Ilość wprowadzana:", min_value=0, )
+    sefty = forms.IntegerField(label="Żelazny zapas:", min_value=0,)
     
     class Meta:
         model = Products

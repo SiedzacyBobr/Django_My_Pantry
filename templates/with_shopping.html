@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-    with shoping
+    Po zakupach
 {% endblock %}
 
 
@@ -10,8 +10,8 @@
 {% block content %}
 <div class="container col-sm-7">
           <table class="table table-hover">
-            <tr class="table-secondary">
-              <th> Nazwa Productu </th>
+            <tr class="table-success">
+              <th> Nazwa Produktu </th>
               <th class="text-center"> Zakupiona ilość </th>
               <th class="text-center"> W spiżarni </th>
             </tr>
@@ -20,10 +20,10 @@
             <tr>
               <td>{{x.name}}</td>
               <td>
-                <form action="{% url 'action_shopping' x.id %}" method="POST" class="row" >
+                <form class="row" action="{% url 'action_shopping' x.id %}" method="POST"  >
                   {% csrf_token %}
-                  <input class="col form-control form-control-sm border mx-1" style="width: 50px;" type="number" name="quty" min="0" value="0" >
-                  <button type="submit" class="col btn btn-primary btn-sm"> <i class="fa-regular fa-square-plus"></i> Dodanie </button>
+                  <input class="form-control form-control-sm border mx-1" style="width: 100px;" type="number" name="quty" min="0" value="0" >
+                  <button class="btn btn-primary btn-sm mx-1" style="width: 100px;" type="submit" > <i class="fa-regular fa-square-plus"></i> Dodanie </button>
                 </form>
               </td>
               <td class="text-center"> {{x.quty}}</td>
@@ -31,7 +31,9 @@
             
             {% endfor %}
             <tr>
-              <td colspan="3"> <a href="/adding" class="btn btn-success "> <i class="fa-regular fa-square-plus"></i> Dodaj nowy product </a></td>
+              <td colspan="3"> 
+                <a href="/adding" class=" text-start btn btn-success col-12"> <i class="fa-regular fa-square-plus"></i> Dodaj: Nowy produkt </a>
+              </td>
             </tr>
           </table>
 </div>

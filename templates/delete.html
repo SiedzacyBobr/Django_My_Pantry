@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-  delete
+  Usuwanie produktu
 {% endblock %}
 
 
@@ -14,7 +14,7 @@
 <form method="post" class="text-center">
   {% csrf_token %} 
 
-  <div class="alert alert-warning p-3 m-3 border border-1">
+  <div class="alert alert-danger p-3 m-3 border border-1">
     Czy jesteś pewien, że chcesz usunąć z swojej spiżarni produkt: <strong>{{pk_product}}</strong>
   </div>
 
