@@ -6,140 +6,149 @@
 {% block headstall %} Wstęp do aplikacji {% endblock %}
 
 {% block content %}
+<section class="instruction">
+  <div class="container">
+    <header class="text-center h3 p-2" id="demo"> Wprowadzenie do obsługi w 4 punktach </header>
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div  class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-3">1. Stwórz listę kategorii</h5>
+              <hr>
+                <p class="card-text">Kliknij: <a class="btn btn-primary  btn-sm" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a> <br> W otwartym oknie w ostatnim wierszu jest zielony przycisk:<br> <mark class="btn-success">+Dodaj: Nową kategorie</mark>
+                  <img src="/static/image/kategorie1.png" alt="Print screen kategorie">
+                  <p>Wypełnij pole podając nazwę kategorii i kliknij: <br> <mark class="btn-success">+Dodaj</mark></p>
+                  <img src="/static/image/addcate.png"  alt="Print screen kategorie">
+                  <p>Po wprowadzeniu kategorii jest dodawana do lity.</p>
+                  <img src="/static/image/addedcate.png" alt="Print screen kategorie">
+                </p>
+            </div>
+          </div>
+        </div>
 
-<div class="row">
-  <header class="text-center h3 p-2 "> Wprowadzenie do obsługi w 4 punktach </header>
+
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-3">2. Dadaj produkt</h5>
+              <hr>
+                <p class="card-text">Kliknij: <a class="btn btn-primary btn-sm" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a> <br> W otwartym oknie w ostatnim wierszu jest przycisk:<br> <mark class="btn-success">+Dodaj: Nowy produkt</mark>
+                  <img src="/static/image/po_zakupach.png" alt="Print screen kategorie">
+                  <ol type="a">
+                    <li>Podaj nazwę produktu.</li>
+                    <li>Określ jednostkę miary.</li>
+                    <li>Podaj aktualny stan w spiżarni.</li>
+                    <li>Określ ilość żelaznego zapasu.</li>
+                    <li>Wybierz kategorie.</li>
+                    <li>Kliknij <mark class="btn-success">+Dodaj</mark></p></li>
+                  </ol>
+                  <img src="/static/image/addprod2.png"  alt="Print screen kategorie">
+                  <p>Po wprowadzeniu produktu jest dodawany do listy.</p>
+                  <img src="/static/image/po_zakupach2.png"  alt="Print screen kategorie">
+                </p>
+            </div>
+          </div>
+        </div>
 
 
-  <div class="col-lg-3 mb-3">
-    <div  class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">1. Stwórz listę kategorii</h5>
-        <hr>
-          <p class="card-text">Kliknij: <a class="btn btn-primary  btn-sm" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a> <br> W otwartym oknie w ostatnim wierszu jest zielony przycisk:<br> <mark class="btn-success">+Dodaj: Nową kategorie</mark>
-            <img src="/static/image/kategorie1.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-            <p>Wypełnij pole podając nazwę kategorii i kliknij: <br> <mark class="btn-success">+Dodaj</mark></p>
-            <img src="/static/image/addcate.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-            <p>Po wprowadzeniu kategorii jest dodawana do lity.</p>
-            <img src="/static/image/addedcate.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-          </p>
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-3">3. Na zakupy Go! </h5>
+              <hr>
+                <p class="card-text"> Kliknij: <a class="btn btn-primary btn-sm" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a> <br> W otwartym oknie jest wyświetlana lista zakupów, jest ona generowana automatycznie.
+                  <img src="/static/image/lista.png" alt="Print screen kategorie">
+                  <p>Program określa minimalną ilość potrzebną do uzupełnienia żelaznego zapasu. Podczas robienia zakupów można odznaczyć zrealizowane pozycje.</p>
+                </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-3">4. Powrót z zakupów </h5>
+              <hr>
+              <p class="card-text"> Kliknij: <a class="btn btn-primary btn-sm" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a> <br> W kolejnych wierszach są wpisane produkty,
+                <img src="/static/image/po_zakupach2.png"  alt="Print screen kategorie">
+                <ol type="a">
+                  <li>Odnajdź produkt</li>
+                  <li>Podaj zakupioną ilość i kliknij:<br> <mark class="btn-primary">+Dodanie</mark></li>
+                </ol>
+                <p> Zaktualizuje się stan spiżarni. Uwaga!: Wykonuj działania po kolei. </p>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
+</section>
 
 
-  <div class="col-lg-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">2. Dadaj produkt</h5>
-        <hr>
-          <p class="card-text">Kliknij: <a class="btn btn-primary btn-sm" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a> <br> W otwartym oknie w ostatnim wierszu jest przycisk:<br> <mark class="btn-success">+Dodaj: Nowy produkt</mark>
-            <img src="/static/image/po_zakupach.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-            <ol type="a">
-              <li>Podaj nazwę produktu.</li>
-              <li>Określ jednostkę miary.</li>
-              <li>Podaj aktualny stan w spiżarni.</li>
-              <li>Określ ilość żelaznego zapasu.</li>
-              <li>Wybierz kategorie.</li>
-              <li>Kliknij <mark class="btn-success">+Dodaj</mark></p></li>
-            </ol>
-            <img src="/static/image/addprod2.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-            <p>Po wprowadzeniu produktu jest dodawany do listy.</p>
-            <img src="/static/image/po_zakupach2.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-          </p>
-      </div>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-4">
+      <article class="card">
+        <div class="card-body">
+          <header class="card-header"><i class="fa-solid fa-circle-exclamation"></i> Na początku był problem </header>
+          <p class="card-text"></p>
+          <ul>
+            <li>Trudność w szybkim przygotowaniu listy zakupów. </li>
+            <li>Kłopotliwe pytanie na zakupach: "Czy mamy jeszcze cukier?". </li>
+            <li>Zakup tego czego jest pod dostatkiem, bo akurat było w promocji. </li>
+            <li>Zapomnienie o zakupie rzadko używanego brakującego produktu. </li>
+            <li>Kłopotliwy spis stanu spiżarni, na kartkach lub w Excelu.</li>
+            <li>Zwiedzanie całego sklepu by sobie przypomnieć co jeszcze miałem kupić.</li>
+          </ul>
+        </div>
+      </article>
     </div>
-  </div>
+    
+    <div class="col-lg-4">
+      <article class="card">
+        <div class="card-body">
+          <header class="card-header"><i class="fa-regular fa-lightbulb"></i> Rozwiązanie problemów - startowa idea </header>
+        Idee aplikacji opiera się na założeniu, że w domu lub kuchni jest wydzielona 
+        przestrzeń na spiżarnię, w której przechowuje się produkty spożywcze o długim czasie przydatności.
+        Produkty z spiżarni są wyjmowane całymi opakowaniami do kuchni, w której następuje ich utylizacja.
+        Gdy stan produktu w spiżarni spada poniżej bezpiecznego progu, generowana jest lista zakupów.
+          <br><br>
+          Podstawowe funkcję aplikacji:
+          <ul>
+            <li>Łatwy i prosty podgląd stanu spiżarni.</li>
+            <li>Automatycznie generowana lista zakupów.</li>
+            <li>Lista zakupów zawsze pod ręką, w smartfonie lub wydrukowana na papieże.</li>
+            <li>Łatwe i proste dodawanie zakupionych produktów do spiżarni.</li>
+            <li>Łatwe i proste zdejmowanie produktów z stanu spiżarni.</li>
+            <li>Łatwe i proste edytowanie i usuwanie produktów z stanu spiżarni.</li>
+            <li>Możliwość obsługi spiżarni na telefonie i komputerze.</li>
+            <li>Wygodne sortowanie po własnych kategoriach </li>
+          </ul>
+        </div>
+      </article>
+    </div> 
 
-
-  <div class="col-lg-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">3. Na zakupy Go! </h5>
-        <hr>
-          <p class="card-text"> Kliknij: <a class="btn btn-primary btn-sm" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a> <br> W otwartym oknie jest wyświetlana lista zakupów, jest ona generowana automatycznie.
-            <img src="/static/image/lista.png" class="card-img mx-auto d-block border border-2 my-3" alt="Print screen kategorie">
-            <p>Program określa minimalną ilość potrzebną do uzupełnienia żelaznego zapasu. Podczas robienia zakupów można odznaczyć zrealizowane pozycje.</p>
-          </p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="col-lg-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">4. Powrót z zakupów </h5>
-        <hr>
-        <p class="card-text"> Kliknij: <a class="btn btn-primary btn-sm" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a> <br> W kolejnych wierszach są wpisane produkty,
-          <img src="/static/image/po_zakupach2.png" class="card-img mx-auto d-block  border border-2 my-3" alt="Print screen kategorie">
-          <ol type="a">
-            <li>Odnajdź produkt</li>
-            <li>Podaj zakupioną ilość i kliknij:<br> <mark class="btn-primary">+Dodanie</mark></li>
+    <div class="col-lg-4">
+      <article class="card">
+        <div class="card-body">
+          <header class="card-header"><i class="fa-solid fa-laptop-code"></i> W trakcie implementacji</header>
+          <p class="card-text">Sugestie pierwszych testerów są ustawione priorytetowo </p>
+          <ol>
+            <li> Dodanie możliwości wyszukiwania produktów po nazwie. </li>
+            <li> Poprawa wyglądu aplikacji na smartfonie by był wygodniejszy. </li>
+            <li> Rozwój konta użytkownika o możliwość zmiany hasła. </li>
           </ol>
-          <p> Zaktualizuje się stan spiżarni. Uwaga!: Wykonuj działania po kolei. </p>
-        </p>
-      </div>
+        </div>
+      </article>
     </div>
-  </div>
-</div>
-
-<div class="containe row">
-
-  <div class="col-lg-4">
-    <article class="card">
-      <div class="card-body">
-        <header class="card-header"><i class="fa-solid fa-circle-exclamation"></i> Na początku był problem </header>
-        <p class="card-text"></p>
-        <ul>
-          <li>Trudność w szybkim przygotowaniu listy zakupów. </li>
-          <li>Kłopotliwe pytanie na zakupach: "Czy mamy jeszcze cukier?". </li>
-          <li>Zakup tego czego jest pod dostatkiem, bo akurat było w promocji. </li>
-          <li>Zapomnienie o zakupie rzadko używanego brakującego produktu. </li>
-          <li>Kłopotliwy spis stanu spiżarni, na kartkach lub w Excelu.</li>
-          <li>Zwiedzanie całego sklepu by sobie przypomnieć co jeszcze miałem kupić.</li>
-        </ul>
-      </div>
-    </article>
-  </div>
-  
-  <div class="col-lg-4">
-    <article class="card">
-      <div class="card-body">
-        <header class="card-header"><i class="fa-regular fa-lightbulb"></i> Rozwiązanie problemów - startowa idea </header>
-      Idee aplikacji opiera się na założeniu, że w domu lub kuchni jest wydzielona 
-      przestrzeń na spiżarnię, w której przechowuje się produkty spożywcze o długim czasie przydatności.
-      Produkty z spiżarni są wyjmowane całymi opakowaniami do kuchni, w której następuje ich utylizacja.
-      Gdy stan produktu w spiżarni spada poniżej bezpiecznego progu, generowana jest lista zakupów.
-        <br><br>
-        Podstawowe funkcję aplikacji:
-        <ul>
-          <li>Łatwy i prosty podgląd stanu spiżarni.</li>
-          <li>Automatycznie generowana lista zakupów.</li>
-          <li>Lista zakupów zawsze pod ręką, w smartfonie lub wydrukowana na papieże.</li>
-          <li>Łatwe i proste dodawanie zakupionych produktów do spiżarni.</li>
-          <li>Łatwe i proste zdejmowanie produktów z stanu spiżarni.</li>
-          <li>Łatwe i proste edytowanie i usuwanie produktów z stanu spiżarni.</li>
-          <li>Możliwość obsługi spiżarni na telefonie i komputerze.</li>
-          <li>Wygodne sortowanie po własnych kategoriach </li>
-        </ul>
-      </div>
-	  </article>
-  </div> 
-
-  <div class="col-lg-4">
-    <article class="card">
-      <div class="card-body">
-        <header class="card-header"><i class="fa-solid fa-laptop-code"></i> W trakcie implementacji</header>
-        <p class="card-text">Sugestie pierwszych testerów są ustawione priorytetowo </p>
-        <ol>
-          <li> Dodanie możliwości wyszukiwania produktów po nazwie. </li>
-          <li> Poprawa wyglądu aplikacji na smartfonie by był wygodniejszy. </li>
-          <li> Rozwój konta użytkownika o możliwość zmiany hasła. </li>
-        </ol>
-      </div>
-    </article>
   </div>
 </div>
 

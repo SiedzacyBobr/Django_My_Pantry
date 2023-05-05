@@ -29,7 +29,6 @@ def select_category(request):
     m_category = Kategoria.objects.filter(user_id=user).order_by('cate')
 
     if request.method == "POST":
-        print("udało się kórka wodna")
         id_cate_f = int(request.POST.get('Cate_ID', 0))
             
     else:
@@ -52,7 +51,6 @@ def to_kitchen(request, pk):
     user = request.user.id
     pk_product = Products.objects.get(id=pk)
     quty = int(request.POST['quty'])
-    print(f" test prosty bo głupieje =======================================> {quty}")
     pk_product.quty -= quty
     pk_product.save()
 
@@ -89,7 +87,7 @@ def go_shopping(request):
         'tobuy':tobuy,
         'listbuy':listbuy,
     }
-    return render(request, 'go_shopping.html', context)
+    return render(request, 'with_shopping.html', context)
 
 
 @login_required

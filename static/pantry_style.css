@@ -1,0 +1,13 @@
+.instruction img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(216, 215, 215);
+  margin-top: 10px;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: #007bff;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+

@@ -8,7 +8,9 @@
     <meta name="description" content="A home pantry management application that automatically, generates a shopping list as needed. "/>
     <meta name="author" content="Krzyszof Wróblewski"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="{% static 'pantry_js.js' %}"></script>
     <script src="https://kit.fontawesome.com/e515080353.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'pantry_static.css' %}">
     
     {% load bootstrap5 %}
     {% bootstrap_css %}
@@ -18,46 +20,61 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark justify-content-between">
 
-                <li class="nav-item"></li>
-                    <a class="nav-link" href="/"><i class="fa-solid fa-circle-info"></i> Info </a>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia </a>
-                </li>
-                <li class="nav-item">                
-                    <a class="nav-link" href="/go"> <i class="fa-solid fa-list"></i> Na zakupy </a>
-                </li>
-                <li class="nav-item">        
-                    <a class="nav-link" href="/with"> <i class="fa-solid fa-basket-shopping"></i> Po zakupach </a>
-                </li>
-                <li class="nav-item">                
-                    <a class="nav-link" href="/category"><i class="fa-solid fa-jar"></i> Kategoria </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Wylogowanie  </a> 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"> <i class="fa-regular fa-user"></i> Zalogowany:  {{ user.username }} </a>
-                </li>
-                    
-                {% else %}
-                <li class="nav-item">        
-                    <a class="nav-link" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logowanie  </a>
-                </li>
-                {%endif%}
+        <div class="navbar-collapse collapse justify-content-stretch" id="navbarNav">
+                <ul class="navbar-nav">
 
-            </ul>
+                    <li class="nav-item  {% if request.path == '/' %} active {% endif %}">
+                        <a class="nav-link ms-2 " href="/"><i class="fa-solid fa-circle-info"></i> Strona główna</a>
+                    </li>
+
+                    <li class="nav-item {% if request.path == '/my_pantry/' %} active {% endif %}">
+                        <a class="nav-link" href="/my_pantry"><i class="fa-solid fa-warehouse"></i> Spiżarnia</a>
+                    </li>
+
+                    <li class="nav-item {% if request.path == '/with/' %} active {% endif %}">
+                        <a class="nav-link" href="/with"><i class="fa-solid fa-basket-shopping"></i> Po zakupach</a>
+                    </li>
+
+                    <li class="nav-item {% if request.path == '/go/' %} active {% endif %}">
+                        <a class="nav-link" href="/go"><i class="fa-solid fa-list"></i> Na zakupy</a>
+                    </li>
+
+                    <li class="nav-item {% if request.path == '/category/' %} active {% endif %}">
+                        <a class="nav-link" href="/category"><i class="fa-solid fa-jar"></i> Kategorie</a>
+                    </li>
+
+                </ul>
+    
+            
+                <ul class="navbar-nav ms-auto">
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Wylogowanie </a> 
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light"> <i class="fa-regular fa-user"></i> Zalogowany: {{ user.username }} </a>
+                    </li>
+                        
+                    {% else %}
+                    <li class="nav-item">        
+                        <a class="nav-link text-light" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logowanie </a>
+                    </li>
+                    {%endif%}
+
+                </ul>
+            
+
         </div>
-    </nav>
-        
+      </nav>
+      
 
 
 <div class="container">

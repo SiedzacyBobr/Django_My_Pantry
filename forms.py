@@ -1,6 +1,7 @@
 from django import forms
 from .models import Products, Kategoria
 from django.db.models import F
+from django.utils.translation import gettext_lazy as _
 
 class ProductsForm(forms.ModelForm):
 
@@ -13,6 +14,7 @@ class ProductsForm(forms.ModelForm):
         model = Products
         fields = '__all__'
         exclude = ['user']
+        labels = {"category":_("Kategoria")}
     
     def __init__ (self, user, *args, **kwargs):
         super().__init__(*args, **kwargs)
