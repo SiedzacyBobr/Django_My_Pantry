@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 def main(request):
     return render(request, 'main.html',)
 
+def about_me(request):
+    return render(request, 'about_me.html',)
+
 
 @login_required
 def my_pantry(request):

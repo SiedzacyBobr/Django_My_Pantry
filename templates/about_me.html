@@ -1,0 +1,156 @@
+{% extends "master.html" %}
+
+{% block title %}
+  O mnie
+{% endblock %}
+
+
+{% block headstall %}{% endblock %}
+{% block content %}
+
+<div id="container">
+
+    <div id="menu">
+        <ol>
+            <li><a href="#wstep">Wstęp</a></li>
+            <li><a href="#umiejetnosci">Umiejętności</a></li>
+            <li><a href="#projekty">Projekty</a></li>
+            <li><a href="#pasje">Zainteresowania</a></li>
+        </ol>
+    </div>
+
+    <div class="rectangle">
+
+        <div id="myfoto">
+
+            <figure>
+            <img src="/static/image/myfotoa.jpg" alt="Zdjęcie autora">
+            <figcaption>mgr inż. Krzysztof Wróblewski</figcaption>
+            </figure>
+
+        </div>
+
+        <div id="mydescription">
+            <article>
+                <header> <h2><a name="wstep">Wstęp</a></h2> </header>
+                <p> Mam już swoje lata, ale nadal jestem 
+                    ciekaw świata. Obecnie zagłębiam się w tajniki programowania. 
+                    Swoją przygodę z programowaniem rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością.
+                    Następnie doszły frameworki, inne języki i technologie. 
+                    Idzie mi różnie, ale czuję, że się rozwijam, zdobywam nowe umiejętności i większe zrozumienie. 
+                    Im lepiej poznaję ten temat, tym bardziej mnie wciąga, szczególnie gdy podpatruje mistrzów przy pracy.
+                    Przede mną jeszcze wiele nauki, ale tak jest w tym moim nowym zawodzie, który zdobywam.
+                    Poszukuję pracy jako frontend developer. </p>
+            <article>
+        </div>
+
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="skills">
+        <h2><a name="umiejetnosci">Zdobyte i zdobywane umiejętności: </a></h2>
+            <p> To przykłady zdybych umiejętności i doświadczeń podczas realizowania moich projektów.
+                Głównym trzonem jest język Python i wraz z nim farmework Django.
+                Do tworzenia stron używam HTML5 a ich stylizacji CSS3 wciąż uczę się ich wykorzystania w praktyce.
+                Bardzo pomocny okazał się framework Bootstrap przyspieszył pracę nad wyglądem tego projektu. 
+                Praca z bazą danych na MySQL choć poznawałem też PostgreSQL. Zakończone etapy pracy zapisuje na githubie.
+                Od okresu studiów korzystałem z linuxa z wielu dystrybucji; Mandriva, Ubuntu, Mint, Puppy. Obecnie korzystam z&nbsp;Windowsa.
+                W przeszłości uczyłem się pracy w Wordpressie - ale przy tym projekcie z niego nie korzystałem.
+
+            </p>
+            <div class="skill">
+               <i class="fa-brands fa-python"></i>
+            </div>
+            
+            <div class="skill">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-bootstrap"></i>
+            </div>
+
+           <div class="skill">
+               <i class="fa-brands fa-js"></i>
+            </div>
+
+            <div class="skill">
+                SQL
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-square-git"></i>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-windows"></i>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-linux"></i>
+            </div>
+
+            <div style="clear: both;"></div>
+        
+
+
+    </div>
+
+    <div id="projects">
+        <h2><a name="projekty"> Moje projekty </a></h2>
+        <p> Wiele było prób, ćwiczeń, nauki i poszukiwań rozwiązań problemów. </p>
+        <div class="project">
+            <h3>Deszyfrator</h3>Program do sortowania skrzynek w&nbsp;centrum dystrybucji, napisany w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter. Cel programu: 
+            Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki. Program rozpoznawał klucz cyfrowy skrzynki i wyświetlał docelowy kraj.
+            <i class="fa-brands fa-github"> link do kodu </i>
+        </div>
+        <div class="project">
+            <h3>Spiżarnia comp</h3>Program dla spiżarni domowej w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter.
+            Cel programu: kontrola posiadanych zapasów i&nbsp;automatyczne generowanie listy zakupów w przypadku niedoborów.
+            <i class="fa-brands fa-github"> link do kodu </i>
+        </div>
+
+        <div class="project">
+            <h3>Lista Zakupowa</h3>Aplikacja webowa do zarządzania spiżarnią domową z wykorzystaniem frameworka Django. To samo co po lewej ale już dostępne w telefonie :) 
+            Co bardzo ułatwiło robienie zakupów i kontrolę w spiżarni. :)
+            <i class="fa-brands fa-github"> link do kodu </i>
+        </div>
+
+        <div style="clear: both;"></div>
+
+    </div>
+  
+    <div id="hobby" >
+        <article>
+            <header><h2><a name="pasje">Zainteresowania i pasje </a></h2></header>
+            <p> O tym tylko wspomnę ;) Bardzo lubię organizować gry terenowe dla harcerzy, mam z tego sporo radochy. 
+                Ostatnia to między narodowa przygotowana przez zespół 3HG czyli Three Hats Games pod tytułem; Rover Hike dla bliko 200 osób.
+                Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje, ale lubię tworzyć manualnie.
+                Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, nowe aranżacje. 
+                A gdy wieje i jest okazja podnoszę żagle i żegluje. 
+                Kilka razy do roku wędruje po górach i zjeżdżam na nartach.  
+            </p>
+            <div class="fotohobby">
+                <img src="/static/image/zagle.jpg" alt="Żeglowanie">
+            </div>
+            <div class="fotohobby">
+                <img src="/static/image/zamek.jpg" alt="Ogród skalny">
+            </div>
+            <div class="fotohobby">
+                <img src="/static/image/karpacz.jpg" alt="Góry">
+            </div>
+            <div style="clear: both;"></div>
+
+
+        </article>
+    
+
+</div>
+
+  
+{% endblock %}
+

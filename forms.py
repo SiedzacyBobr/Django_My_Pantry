@@ -24,7 +24,7 @@ class ProductsForm(forms.ModelForm):
 
 class KategoriaForm(forms.ModelForm):
 
-    cate = forms.CharField(label="Nazwa kategorii", help_text="  np. lodówka",)
+    cate = forms.CharField(label="Nazwa kategorii",)
 
     class Meta:
         model = Kategoria

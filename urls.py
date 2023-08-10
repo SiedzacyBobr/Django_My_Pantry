@@ -17,6 +17,7 @@ urlpatterns = [
     path('delete_cate/<int:pk>/', views.delete_cate, name='delete_cate'),
     path('update_cate/<int:pk>/', views.update_cate, name='update_cate'),
     path('select_cate/', views.select_category, name='select_cate'),
+    path('about_me/', views.about_me, name='about_me'),
 
 
     
