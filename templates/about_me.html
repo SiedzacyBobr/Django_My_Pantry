@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-  O mnie
+  about me
 {% endblock %}
 
 
@@ -24,7 +24,7 @@
         <div id="myfoto">
 
             <figure>
-            <img src="/static/image/myfotoa.jpg" alt="Zdjęcie autora">
+            <img src="/static/image/myfotos.jpg" alt="Zdjęcie autora">
             <figcaption>mgr inż. Krzysztof Wróblewski</figcaption>
             </figure>
 
@@ -33,14 +33,13 @@
         <div id="mydescription">
             <article>
                 <header> <h2><a name="wstep">Wstęp</a></h2> </header>
-                <p> Mam już swoje lata, ale nadal jestem 
-                    ciekaw świata. Obecnie zagłębiam się w tajniki programowania. 
-                    Swoją przygodę z programowaniem rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością.
-                    Następnie doszły frameworki, inne języki i technologie. 
-                    Idzie mi różnie, ale czuję, że się rozwijam, zdobywam nowe umiejętności i większe zrozumienie. 
-                    Im lepiej poznaję ten temat, tym bardziej mnie wciąga, szczególnie gdy podpatruje mistrzów przy pracy.
-                    Przede mną jeszcze wiele nauki, ale tak jest w tym moim nowym zawodzie, który zdobywam.
-                    Poszukuję pracy jako frontend developer. </p>
+                <p> Obecnie zagłębiam się w tajniki programowania aplikacji webowych. 
+                    Swoją przygodę z&nbsp;programowaniem rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością i czytelnością.
+                    Następnie dołączyły HTML5 CSS3 JS i frameworki jak Django czy Bootstrap, obecnie kolejny stopień tajemniczenia to React. 
+                    Idzie mi różnie, ale czuję, że się rozwijam, zdobywam nowe umiejętności i&nbsp;większe zrozumienie. 
+                    Im lepiej poznaję w praktyce temat tworzenia aplikacji webowych, tym bardziej mnie wciąga, szczególnie, gdy podpatruje mistrzów przy pracy.
+                    Przede mną jeszcze wiele nauki, ale tak już jest w tym moim nowym zawodzie, cały czas trzeba się uczyć.
+                    Poszukuję pracy jako frontend developer w oparciu do Pythona, framework Django, a&nbsp;zaraz i dołączy Reakt. </p>
             <article>
         </div>
 
@@ -48,14 +47,15 @@
     </div>
 
     <div id="skills">
-        <h2><a name="umiejetnosci">Zdobyte i zdobywane umiejętności: </a></h2>
-            <p> To przykłady zdybych umiejętności i doświadczeń podczas realizowania moich projektów.
+        <h2><a name="umiejetnosci">Umiejętność </a></h2>
+            <p> To przykłady zdobych umiejętności i doświadczeń podczas realizowania moich projektów.
                 Głównym trzonem jest język Python i wraz z nim farmework Django.
                 Do tworzenia stron używam HTML5 a ich stylizacji CSS3 wciąż uczę się ich wykorzystania w praktyce.
-                Bardzo pomocny okazał się framework Bootstrap przyspieszył pracę nad wyglądem tego projektu. 
-                Praca z bazą danych na MySQL choć poznawałem też PostgreSQL. Zakończone etapy pracy zapisuje na githubie.
-                Od okresu studiów korzystałem z linuxa z wielu dystrybucji; Mandriva, Ubuntu, Mint, Puppy. Obecnie korzystam z&nbsp;Windowsa.
-                W przeszłości uczyłem się pracy w Wordpressie - ale przy tym projekcie z niego nie korzystałem.
+                Bardzo pomocny okazał się framework Bootstrap, przyspieszył pracę nad wyglądem tego projektu. 
+                Do pracy z bazą danych używam MySQL choć poznawałem też PostgreSQL. Zakończone etapy pracy zapisuje na githubie korzystając z wiersza poleceń Git Bush.
+                Od okresu studiów pracowałem na linuksie, poznałem kilka dystrybucji jak: Mandriva, Ubuntu, Mint, Puppy. Obecnie korzystam z&nbsp;Windowsa.
+                W przeszłości uczyłem się też pracy w&nbsp;Wordpressie. Na studiach chciałem nauczyć się pisać
+                 bezwzrokowa na klawiaturze a&nbsp;że układ QWERTY wydawał mi się niewygodny opanowałem układ Dvoraka.
 
             </p>
             <div class="skill">
@@ -87,7 +87,7 @@
             </div>
 
             <div class="skill">
-                <i class="fa-brands fa-windows"></i>
+                <i class="fa-brands fa-react"></i>
             </div>
 
             <div class="skill">
@@ -101,23 +101,47 @@
     </div>
 
     <div id="projects">
-        <h2><a name="projekty"> Moje projekty </a></h2>
-        <p> Wiele było prób, ćwiczeń, nauki i poszukiwań rozwiązań problemów. </p>
+        <h2><a name="projekty"> Projekty </a></h2>
+        <p> Wiele było prób, ćwiczeń, nauki i poszukiwań rozwiązań problemów. Napisane programy wciąż nie są idealne i jest co przy nich robić.
+            Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy. Patrząt w przyszłość na to co napisałem myślę sobie: "Łooo Paaanie kto Panu tak to napisał"&#128517; <br>Oto trzy wybrane projekty.
+        </p>
         <div class="project">
-            <h3>Deszyfrator</h3>Program do sortowania skrzynek w&nbsp;centrum dystrybucji, napisany w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter. Cel programu: 
-            Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki. Program rozpoznawał klucz cyfrowy skrzynki i wyświetlał docelowy kraj.
-            <i class="fa-brands fa-github"> link do kodu </i>
+            <div><h3>Deszyfrator</h3>
+            <p>Program do sortowania skrzynek w&nbsp;centrum dystrybucji, napisany w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter. Cel programu: 
+            Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki. Program rozpoznawał klucz cyfrowy skrzynki i wyświetlał docelowy kraj.</p></div>
+            <div>
+            <figure>
+                <img src="/static/image/deszyfrator.jpg" alt="preenscreen programu">
+                <figcaption>Deszyfrator Tote</figcaption>
+            </figure>
+            </div>
+
+            <div class="pojhub"><a class="github" href="https://github.com/SiedzacyBobr/SorterForTote"><i class="fa-brands fa-github"></i></a></div>
         </div>
         <div class="project">
-            <h3>Spiżarnia comp</h3>Program dla spiżarni domowej w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter.
-            Cel programu: kontrola posiadanych zapasów i&nbsp;automatyczne generowanie listy zakupów w przypadku niedoborów.
-            <i class="fa-brands fa-github"> link do kodu </i>
+            <h3>Spiżarnia comp</h3>
+            <p>Program dla spiżarni domowej w&nbsp;Pythonie z wykorzystaniem biblioteki Tkinter.
+            Cel programu: kontrola posiadanych zapasów i&nbsp;automatyczne generowanie listy zakupów w przypadku niedoborów.</p>
+            <div>
+                <figure>
+                    <img src="/static/image/spizarniacomp.jpg" alt="preenscreen programu">
+                    <figcaption>Spiżarnia Comp.</figcaption>
+                </figure>
+                </div>
+            <div class="pojhub"><a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="fa-brands fa-github"></i></a></div>
         </div>
 
         <div class="project">
-            <h3>Lista Zakupowa</h3>Aplikacja webowa do zarządzania spiżarnią domową z wykorzystaniem frameworka Django. To samo co po lewej ale już dostępne w telefonie :) 
-            Co bardzo ułatwiło robienie zakupów i kontrolę w spiżarni. :)
-            <i class="fa-brands fa-github"> link do kodu </i>
+            <h3>Spiżarnia Web.</h3>
+            <p>Aplikacja webowa do zarządzania spiżarnią domową z&nbsp;wykorzystaniem frameworka Django. To samo co po lewej, ale już dostępne w telefonie &#128526;
+            Co bardzo ułatwiło robienie zakupów i&nbsp;kontrolę w spiżarni. &#128512; </p>
+            <div>
+                <figure>
+                    <img src="/static/image/spizarniaweb.jpg" alt="preenscreen programu">
+                    <figcaption>Spiżarnia Web.</figcaption>
+                </figure>
+                </div>
+            <div class="pojhub"><a class="github" href="https://github.com/SiedzacyBobr/Django_My_Pantry"><i class="fa-brands fa-github"></i></a></div>
         </div>
 
         <div style="clear: both;"></div>
@@ -127,12 +151,12 @@
     <div id="hobby" >
         <article>
             <header><h2><a name="pasje">Zainteresowania i pasje </a></h2></header>
-            <p> O tym tylko wspomnę ;) Bardzo lubię organizować gry terenowe dla harcerzy, mam z tego sporo radochy. 
-                Ostatnia to między narodowa przygotowana przez zespół 3HG czyli Three Hats Games pod tytułem; Rover Hike dla bliko 200 osób.
-                Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje, ale lubię tworzyć manualnie.
-                Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, nowe aranżacje. 
+            <p> O tym tylko wspomnę &#128521; Bardzo lubię organizować gry terenowe dla harcerzy, mam z tego sporo radochy. 
+                Ostatnia gra była między narodowa na Camparee na Węgrzech. Przygotowana przez zespół 3HG czyli Three Hats Games pod tytułem; Rover Hike dla bliko 200 osób.
+                Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje, tworzę meble.
+                Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, skalne aranżacje. 
                 A gdy wieje i jest okazja podnoszę żagle i żegluje. 
-                Kilka razy do roku wędruje po górach i zjeżdżam na nartach.  
+                Kilka razy do roku wędruje po górach i zjeżdżam na nartach.
             </p>
             <div class="fotohobby">
                 <img src="/static/image/zagle.jpg" alt="Żeglowanie">
