@@ -1,0 +1,185 @@
+
+
+.instruction img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(216, 215, 215);
+  margin-top: 10px;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: #007bff;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* czerwony #FAA88E , pomarańczowy #FCDD88 , zielony #B6E37B , seledynowe #91FFD7 , niebieski #99B7F7 */
+
+* {
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
+
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+
+
+
+article{
+  padding: 25px;
+  border-radius: 5px;
+}
+
+section{
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+p{
+  text-align: justify;
+}
+
+
+#menu{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 25px;
+  
+}
+
+ol{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+ol a {
+  text-decoration: none;
+  color: darkblue;
+  width: 25%;
+  padding-left:  10px;
+  padding-right: 10px;
+  display: block;
+}
+
+ol > li{
+  float: left;
+  border-right: 1px dotted black;
+  border-radius: 5px;
+}
+
+ol > li:first-child{
+  border-left: 1px dotted black;
+}
+
+ol > li:hover{
+  background-color: #99B7F7;
+  
+}
+
+ol > li > a:hover{
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+h2{
+  letter-spacing: 2px;
+}
+#description{
+  background-color: #99B7F7;
+}
+
+#skills{
+  background-color: #FCDD88;
+}
+
+#projects{
+  background-color: aquamarine;
+}
+
+#interests{
+background-color: aqua;
+}
+#myfoto{
+  border: 3px red dotted;
+  margin-left: 10px;
+}
+
+.skill{
+  margin: 5px;
+  background-color: white;
+  float: left;
+  font-size: 50px;
+  border-radius: 5px;
+}
+
+
+.project{
+  background-color: white;
+  float: left;
+  border-radius: 5px;
+  position: relative;
+  padding: 2%;
+  height: 570px;
+  
+}
+
+.pojhub{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.github{
+  font-size: 50px;
+  color: rgb(121, 121, 121);
+  margin-bottom: 20px;
+}
+
+.github:hover{
+  color: #FCDD88;
+}
+
+.fotohobby{
+  float: left;
+  border-radius: 5px;
+}
+
+figure{
+  padding: 0;
+ }
+
+figcaption{
+  margin-top: 10px;
+  padding: 0;
+  font-size: 15px;
+  color: black;
+}
+
+.freespace{
+  height: 300px;
+}
