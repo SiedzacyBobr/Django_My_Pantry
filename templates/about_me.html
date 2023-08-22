@@ -7,28 +7,28 @@
     <meta name="keywords" content="Pantry, Home pantry management, Pantry inventory management, Shopping list management "/>
     <meta name="description" content="A home pantry management application that automatically, generates a shopping list as needed. "/>
     <meta name="author" content="Krzyszof Wróblewski"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="{% static 'pantry_script.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://kit.fontawesome.com/e515080353.js" crossorigin="anonymous"></script>
+    <script src="{% static 'about_me_script1.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'pantry_style_about_me.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?&family=Belleza&display=swap" rel="stylesheet"> 
 
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <title>{% block title %}{% endblock %}</title>
-    
 </head>
 
-<body>
+<body onload="next_passion()">
     <header>
         <h1>Krzysztof Wróblewski</h1>
     </header>
 
     <nav class="sticky">
-        <ul class="menu" >
+        <ul>
             <li><a href="#wstep">Wstęp</a></li>
             <li><a href="#umiejetnosci">Umiejętności</a></li>
             <li><a href="#projekty">Projekty</a></li>
@@ -38,223 +38,189 @@
     </nav>
 
 <main>
-<article>
-    <section id="description">
 
+<article>
+
+
+    <section class="row" >
+
+        
         <header><h2><a name="wstep">Wstęp</a></h2></header>
 
-        <div class="row"> 
-            <div  class="col-3" id="myfoto">
-            <figure style="float:left;">
+            
+            <figure class="col-t-12 col-s-3">
                 <img src="/static/image/myfotos.jpg" alt="Zdjęcie autora">
                 <figcaption>mgr inż. Krzysztof Wróblewski</figcaption>
             </figure>
+            
+
+            
+            <div class="col-t-12 col-s-9 description">
+
+                Tworzenie, stwarzanie, projektowanie, wymyślanie, odkrywanie, eksplorowanie to jest coś co mnie kręci. 
+                
+                Świat aplikacji webowych pod tym względem niema dla mojego umysłu granic 
+                a&nbsp;każdy jego zakątek jest godny kolejnej przygody. 
+
+                Temat jest tak obszerny, z&nbsp;tak wieloma jeszcze nieodkrytymi możliwościami, że patrząc 
+                w&nbsp;dal z&nbsp;wrażenia mnie zatyka i&nbsp;pobudza.
+
+                Programowanie rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością 
+                i&nbsp;czytelnością
+
+                Początki nie były łatwe, ale teraz poznawanie kolejnych nowości 
+                i&nbsp;ich układanie idzie mi znaczenie łatwiej.
+
             </div>
-            <div class="col-9">
-                <p>
-                Tworzenie, stwarzanie, projektowanie, wymyślanie, odkrywanie, eksplorowanie to jest coś co mnie kręci  <i class="fa-solid fa-face-grin-stars"></i>. 
-                Świat aplikacji webowych pod tym względem niema dla mojego umysłu granic a&nbsp;każdy jego zakątek jest godny kolejnej przygody. 
-                Temat jest tak obszerny, z&nbsp;tak wieloma jeszcze nieodkrytymi możliwościami, że patrząc w&nbsp;dal z&nbsp;wrażenia mnie zatyka i&nbsp;rozbudza.
-                Programowanie rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością i&nbsp;czytelnością.
-                Początki nie były łatwe, teraz poznawanie kolejnych nowości i&nbsp;ich układanie idzie mi znaczenie łatwiej. 
-                </p>
-            </div>
-        </div>
+
+
 
     </section>
-    
-    <div class="freespace">
-    </div>
 
-    <section class="row" id="skills">
+
+    <section>
 
         <header><h2><a name="umiejetnosci">Umiejętność </a></h2></header>
 
-        <div class="row">
-            <div class="col-1 skill">
-                <i class="fa-brands fa-python"></i>
-             </div>
-
-            <div class="col-10">
-                <p>Głównym trzonem moich umiejętności jest język Python i&nbsp;wraz z&nbsp;nim 
-                    farmework Django. Repozytorium githuba obsługuję z&nbsp;wiersza poleceń git bush</p>
-             </div>
-
-            <div class="col-1 skill">
-                <i class="fa-brands fa-square-git"></i>
-            </div>
+        <div class="skills">
+            <i class="fa-brands fa-python"></i>
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-brands fa-bootstrap"></i>
+            <i class="fa-brands fa-react"></i>
+            <i class="fa-brands fa-square-git"></i>
+            <i class="fa-brands fa-wordpress"></i>
         </div>
 
-        <div class="row">
-            <div class="col-1 skill">
-                <i class="fa-brands fa-html5"></i>
-            </div>
-            <div class="col-10">
-                <p>
-                Do tworzenia stron używam HTML5 a&nbsp;do niego bardzo pomocny okazał się framework Bootstrap,
-                który przyspieszył tworzenie wizualne przyjemnej aplikacji My Patry.
+        <div class="description">
+            Trzonem moich umiejętności programowania jest język Python a&nbsp;wraz z&nbsp;nim 
+            farmework Django. Pisane przeze mnie programy nie są zaawansowane, ale wystarczające do realizacji pomysłów.
+            Swoje repozytorium na GitHubie obsługuję z&nbsp;wiersza poleceń Git Busha.
+            Może to nic nadzwyczajnego a&nbsp;jednak cieszy i&nbsp;upraszcza pracę. 
+            Strony tworzę przez HTML5 choć w&nbsp;przeszłości korzystałem też z&nbsp;Wordpressa. 
+            Do stylizacji używam CSS3 - posiadanie kontroli nad wyglądem jest naprawdę budujące.  
+            Umiem też wykorzystywać framework Bootstrap5, co jest bardzo pomocne.
+            Na stronie posłużyłem się JS do wykonanie drobnych animacji. 
+            Następnym krokiem jest opanowanie Reacta, ale to z&nbsp;czasem.
+            Jest jeszcze kilka innych umiejętności jak: Praca z&nbsp;SQL przez MySQL czy PostgreSQL do tworzenia bazy danych.
+            Bezwzrokowa obsługa klawiatury typu Dvoraka - już od czasów studiów przy odpowiednim flow piszę szybciej niż czytam. 
+            Przez okres studiów korzystałem z&nbsp;systemu Linux, obecnie z&nbsp;Windowsa.
+        </div> 
 
-                </p>
-            </div>
-            <div class="col-1 skill">
-                <i class="fa-brands fa-bootstrap"></i>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1 skill">
-                <i class="fa-brands fa-css3-alt"></i>
-            </div>
-
-            <div class="col-10">
-                <p>
-                    Język CSS3 mam wielkie możliwości przy stylizacji stron, 
-                    im lepiej poznaje tym więcej poznaje tajników sztuczek i&nbsp;fajerwerków. 
-                    Używałem go do stylizacji tej strony. Reacta dopiero poznaję.
-            </div>
-
-            <div class="col-1 skill">
-                <i class="fa-brands fa-react"></i>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1 skill">
-                <i class="fa-brands fa-js"></i>
-             </div>
-
-             <div class="col-10">
-                <p>Magia Java Scriptu jedno zapytanie do serwera i&nbsp;działanie na stronie. 
-                W&nbsp;przeszłości uczyłem się też pracy w&nbsp;Wordpressie teraz to jest do odświeżenia. 
-             </div>
-
-             <div class="col-1 skill">
-                <i class="fa-brands fa-wordpress"></i>
-            </div>
-        </div>
-
-        <div class="col-12">
-            <p> Jest jeszcze kilka innych umiejętności jak: Praca z&nbsp;SQL przez MySQL czy PostgreSQL.
-                Bezwzrokowa obsługa klawiatury typu Dvoraka - bardzo pomocna umiejętność.
-                Przez okres studiów korzystałem z&nbsp;systemu Linux obecnie z&nbsp;Windowsa.
-              </p>
-        </div>     
-        
     </section>
-
-    <div class="freespace">
-    </div>
    
-    <section class="row" id="projects">
-        <header><h2><a name="projekty">Moje projekty</a></h2></header>
-            <p> Wiele było prób, ćwiczeń, nauki i&nbsp;poszukiwań rozwiązań problemów. 
+    <section class="row">
+        
+            <header><h2><a name="projekty">Moje projekty</a></h2></header>
+
+            <div class="description">
+                Wiele było prób, ćwiczeń, nauki i&nbsp;poszukiwań rozwiązań problemów. 
                 Napisane programy wciąż nie są idealne i&nbsp;jest co przy nich robić.
-                Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy. 
+                Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy.
+                Zdobyta wiedza i umiejętność w praktyce podczas rozwiązywania problemów jest niezastąpiona. 
                 Patrząc w&nbsp;przyszłość na to co napisałem myślę sobie: "Łooo Paaanie kto Panu tak to napisał"&#128517; i&nbsp;przystępuje do refaktoryzacji swojego kodu. 
                 <br>Oto trzy wybrane projekty.
-            </p>
+                
+            </div>
 
 
-        <div class="row project">
-            <header><h3>Deszyfrator</h3></header>
+            <div class=" col-s-4 project">
+                <header><h3>Deszyfrator</h3></header>
 
-            <div class="col-3">
                 <figure>
                     <img src="/static/image/deszyfrator.jpg" alt="preenscreen programu">
                     <figcaption>Deszyfrator Tote</figcaption>
                 </figure>
-            </div>
-            
-            <div class="col-9">
-                <p><b>Opis:</b> Bardzo prosty program pomocny w&nbsp;rozszyfrowaniu celu przeznaczenia skrzynek transportowych w&nbsp;centrum dystrybucji, 
+                
+                
+                <div class="description">
+                    <b>Opis:</b> Bardzo prosty program pomocny w&nbsp;rozszyfrowaniu celu przeznaczenia skrzynek 
+                    transportowych w&nbsp;centrum dystrybucji, 
                     napisany w&nbsp;Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter do wygodniejszej obsługi.<br>
                     <b>Cel:</b>
-                Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki by wyeliminować błędy i&nbsp;przyspieszyć proces sortowania.</p>
-            </div>
-        
-            <div class="pojhub">
-                <a class="github" href="https://github.com/SiedzacyBobr/SorterForTote"><i class="gitclick fa-brands fa-github"></i></a>
-            </div>
-        </div>
-        
-        <div class="row project">
-            <header><h3>Spiżarnia comp</h3></header>
-            
-
-             <div class="col-3">
-                <figure>
-                    <img src="/static/image/spizarniacomp.jpg" alt="preenscreen programu">
-                    <figcaption>Spiżarnia Comp.</figcaption>
-                </figure>
+                    Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki by wyeliminować błędy i&nbsp;przyspieszyć proces sortowania.
+                </div>
                 
-            </div>
             
-            <div class="col-9">
-                <p><b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
-                    <br><b>Cel: </b> Wygodniejsze niż w&nbsp;exelu panowanie nad posiadanymi zapasami w&nbsp;własnej spiżarni i&nbsp;automatyczne generowanie listy potrzebnych zakupów do uzupełnienia bezpiecznego stanu z&nbsp;możliwością wydruku.</p>
+                <div class="pojhub">
+                    <a class="github" href="https://github.com/SiedzacyBobr/SorterForTote"><i class="gitclick fa-brands fa-github"></i></a>
+                </div>
             </div>
- 
-            <div class="pojhub">
-                <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
-            </div>
-        </div>
 
-        <div class="row project">
-            <header><h3>Spiżarnia Web.</h3></header>
             
+            <div class=" col-s-4 project">
+                <header><h3>Spiżarnia comp</h3></header>
+                
+
+                
+                    <figure>
+                        <img src="/static/image/spizarniacomp.jpg" alt="preenscreen programu">
+                        <figcaption>Spiżarnia Comp.</figcaption>
+                    </figure>
+                    
             
-            <div class="col-3">
-                <figure>
-                    <img src="/static/image/spizarniaweb.jpg" alt="preenscreen programu">
-                    <figcaption>Spiżarnia Web.</figcaption>
-                </figure>
-            </div>
-         
-            <div class="col-9">
-                <p><b>Opis:</b> Aplikacja webowa do zarządzania spiżarnią domową z&nbsp;wykorzystaniem frameworka Django. 
-                    <br><b>Cel:</b> Udostępnić aplikację przez internet by był łatwy dostęp z&nbsp;telefonu. &#128526;
-                Co z&nbsp;założenia ma ułatwić korzystanie z&nbsp;aplikacji w&nbsp;domu i&nbsp;sklepie &#128512; </p>
-            </div>
+                    <div class="description">
+                        <b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;
+                        Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
+                        <br><b>Cel: </b> Wygodniejsze niż w&nbsp;exelu panowanie nad posiadanymi 
+                        zapasami w&nbsp;własnej spiżarni i&nbsp;automatyczne generowanie listy 
+                        potrzebnych zakupów do uzupełnienia bezpiecznego stanu z&nbsp;możliwością wydruku.
+                    </div>
+            
     
-            <div class="pojhub">
-                <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
+                <div class="pojhub">
+                    <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
+                </div>
             </div>
-        </div>
-       
+
+
+            <div class=" col-s-4 project">
+                <header><h3>Spiżarnia Web.</h3></header>
+                
+                
+                    <figure>
+                        <img src="/static/image/spizarniaweb.jpg" alt="preenscreen programu">
+                        <figcaption>Spiżarnia Web.</figcaption>
+                    </figure>
+                
+                
+                    <div class="description">
+                        <b>Opis:</b> Aplikacja webowa do zarządzania spiżarnią domową z&nbsp;wykorzystaniem frameworka Django. 
+                        <br><b>Cel:</b> Udostępnić aplikację przez internet by był łatwy dostęp z&nbsp;telefonu. &#128526;
+                        Co z&nbsp;założenia ma ułatwić korzystanie z&nbsp;aplikacji w&nbsp;domu i&nbsp;sklepie &#128512;
+                    </div>
+
+            
+                    <div class="pojhub">
+                        <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
+                    </div>
+
+            </div>
+        
     </section>
 
-    <div class="freespace">
-    </div>
+    <section class="row">
 
-    <section id="interests">
-        <header><h2><a name="pasje">Zainteresowania i pasje </a></h2></header>
+        <header><h2><a name="pasje">Zainteresowania i&nbsp;pasje </a></h2></header>
 
-        <p> O&nbsp;tym tylko wspomnę &#128521; Bardzo lubię organizować gry terenowe dla harcerzy i&nbsp;nietylko, mam z&nbsp;tego sporo radochy. 
-            Ostatnia gra była między narodowa na Camparee na Węgrzech. Przygotowana przez zespół 3HG czyli Three Hats Games pod tytułem; 
-            Rover Hike dla bliko 200 osób.
+        <div class="description"> O&nbsp;tym tylko wspomnę &#128521; Bardzo lubię organizować gry 
+            terenowe dla harcerzy i&nbsp;nietylko, mam z&nbsp;tego sporo radochy. 
+            Ostatnia gra była między narodowa na Camparee na Węgrzech. Przygotowana 
+            przez zespół 3HG czyli Three Hats Games dla bliko 200 osób.
             Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje.
             Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, skalne aranżacje. 
             A&nbsp;gdy wieje i&nbsp;jest okazja podnoszę żagle i&nbsp;żegluję. 
             Kilka razy do roku wędruje po górach i&nbsp;zjeżdżam na nartach.
-        </p>
-
-        <div class="col-4 fotohobby">
-            <img src="/static/image/zagle.jpg" alt="Żeglowanie">
         </div>
 
-        <div class="col-4 fotohobby">
-            <img src="/static/image/zamek.jpg" alt="Ogród skalny">
-        </div>
+        <div id="passions">
 
-        <div class="col-4 fotohobby">
-            <img src="/static/image/karpacz.jpg" alt="Góry">
         </div>
-
-        <div style="clear: both;"></div>
 
     </section>
-    <div class="freespace">
-    </div>
+
+    
 
 </article>
 </main>

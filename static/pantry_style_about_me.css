@@ -2,71 +2,167 @@
   box-sizing: border-box;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: block;
+/* ustawienie root dla REM */
+html{
+  font-size: 16px;
+
 }
-
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
-
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
-}
-
 
 body{
-  background-image: url("/static/image/wrobelek.jpg");
+  background-image: linear-gradient(to right, rgba(133, 93, 71, 0.664) , rgba(88, 99, 129, 0.637));
+}
+
+/*
+body{
+  background-image: url("/static/image/wrobeleknim.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   margin: 0;
 }
+*/
 
 article{
 
-  width: 75%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Belleza', cursive;
-  
-
+  border-radius: 10px;
 }
+
 header{
   text-align: center;
 }
 
+h1{
+  letter-spacing: 3px;
+  padding: 5px;
+  font-family: 'Belleza', cursive;
+  font-size: 2.5rem;
+  margin: 21px;
+}
+
 section{
-  padding: 20px;
-  margin-top: 25px;
+  padding: 21px;
   border-radius: 5px;
-  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 50px;
+}
+
+h2{
+  letter-spacing: 4px;
+  color: #110c0c;
+  font-size: 2rem;
+  border-top: #383232 dashed 1px;
+  border-bottom: #383232 dashed 1px;
+  margin: 13px;
+  padding: 8px;
+
+}
+
+h3{
+  font-size: 1.5rem;
+  border-bottom: dotted black 2px;
+}
+
+.description{
+  margin: 0;
+  text-align: justify;
+  padding: 13px;
+  font-size: 1.2rem;
+  background-color: rgba(230, 240, 253, 0.5) ;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+figure{
+  padding: 0;
+  min-width: 235px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 21px;
+ }
+
+figcaption{
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+@media only screen and (max-width: 1000px) {
+
+.col-t-1 {width: 8.33%;}
+.col-t-2 {width: 16.66%;}
+.col-t-3 {width: 25%;}
+.col-t-4 {width: 33.33%;}
+.col-t-5 {width: 41.66%;}
+.col-t-6 {width: 50%;}
+.col-t-7 {width: 58.33%;}
+.col-t-8 {width: 66.66%;}
+.col-t-9 {width: 75%;}
+.col-t-10 {width: 83.33%;}
+.col-t-11 {width: 91.66%;}
+.col-t-12 {width: 100%;}
+
+  article{
+    width: 100%;
+    padding: 13px;
+  }
+
+  
+
+  nav a{
+    font-size: 1.2rem;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+  
+.col-s-1 {width: 8.33%;}
+.col-s-2 {width: 16.66%;}
+.col-s-3 {width: 25%;}
+.col-s-4 {width: 33.33%;}
+.col-s-5 {width: 41.66%;}
+.col-s-6 {width: 50%;}
+.col-s-7 {width: 58.33%;}
+.col-s-8 {width: 66.66%;}
+.col-s-9 {width: 75%;}
+.col-s-10 {width: 83.33%;}
+.col-s-11 {width: 91.66%;}
+.col-s-12 {width: 100%;}
+  
+
+  article{
+    width: 100%;
+    max-width: 1100px;
+    padding: 13px;
+  }
+
 }
 
 footer{
   background-color: #151111;
-  padding: 20px;
-  font-size: 15px;
+  padding: 5px;
+  font-size: 0.8rem;
   font-family: 'Belleza', cursive;
   color: rgb(219, 200, 200);
   text-align: center;
@@ -81,50 +177,13 @@ footer a:hover{
   color: white;
 }
 
-h1{
-  letter-spacing: 2px;
-  padding: 24px;
-  text-align: center;
-  font-family: 'Belleza', cursive;
-
-}
-
-h2{
-  letter-spacing: 4px;
-  font-size: 70px;
-  color: #383232;
-}
-p{
-  text-align: justify;
-  padding: 10px;
-}
-
-
-
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  border: white double 4px;
-}
-
-figure{
-  padding: 0;
-
- }
-
-figcaption{
-  margin-top: 10px;
-  padding: 0;
-  font-size: 15px;
-  color: black;
-  text-align: center;
-}
-
 nav{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Belleza', cursive;
+  padding-top: 7px;
+  padding-bottom: 0;
 }
 
 .sticky{
@@ -134,14 +193,9 @@ nav{
   top: 0;
   z-index: 100;
 }
-.menu{
-  padding-top: 20px;
-  font-size: 25px;
-  font-family: 'Belleza', cursive;
-}
 
 ul{
-  padding: 0;
+  padding: 5px;
   margin: 0;
   list-style-type: none;
   display: inline-block;
@@ -150,7 +204,6 @@ ul{
 ul a {
   text-decoration: none;
   color: darkblue;
-  width: 25%;
   padding-left:  10px;
   padding-right: 10px;
   display: block;
@@ -175,43 +228,21 @@ ul > li > a:hover{
   color: white;
 }
 
-#description{
-  background-color: rgba(255, 255, 255, 0.5) ;
-  margin-top: 50px;
-  
-}
-
-#skills{
-  background-color:rgba(204, 203, 193, 0.5) ;
-}
-
-#projects{
-  background-color: rgba(161, 206, 248, 0.5) ;
-}
-
-#interests{
-background-color: rgba(255, 224, 180, 0.5) ;
-}
-#myfoto{
-  text-align: center;
-  float: left;
-  padding-left: 50px;
-  padding-top:15px;
-}
-
-.skill{
+.skills{
   background-color: white;
-  font-size: 50px;
-  border-radius: 5px;
+  font-size: 3rem;
   text-align: center;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  letter-spacing: 5px;
+  padding: 8px;
+  margin-bottom: 8px;
 }
 
 
 .project{
   background-color: rgba(255, 255, 255, 0.5) ;
-  padding: 10px;
-  margin-bottom: 2%;
+  padding: 13px;
+  margin-top: 13px;
   border-radius: 5px;
   border: black solid 2px;
   
@@ -244,11 +275,12 @@ background-color: rgba(255, 224, 180, 0.5) ;
   
 }
 
-.fotohobby{
-  float: left;
-  border-radius: 5px;
+#passions{
+  text-align: center;
+  margin: 21px;
 }
 
-.freespace{
-  height: 100px;
+#passions img{
+  border: black solid 3px;
+  max-width: 500px;
 }
