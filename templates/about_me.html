@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/e515080353.js" crossorigin="anonymous"></script>
-    <script src="{% static 'about_me_script1.js' %}"></script>
+    <script src="{% static 'about_me_script.js' %}"></script>
+    
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
 			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			crossorigin="anonymous"></script>
@@ -22,19 +23,20 @@
 
 </head>
 
-<body onload="next_passion()">
+<body onload="nextPassion()">
     <header>
         <h1>Krzysztof Wróblewski</h1>
     </header>
 
-    <nav class="sticky">
-        <ul>
-            <li><a href="#wstep">Wstęp</a></li>
-            <li><a href="#umiejetnosci">Umiejętności</a></li>
-            <li><a href="#projekty">Projekty</a></li>
-            <li><a href="#pasje">Zainteresowania</a></li>
-            <li><a href="/">Spiżarnia</a></li>
-        </ul>
+    <nav class="sticky navbar" id="myNavbar">
+        
+        <a href="javascript:void(0);" class="icon" onclick="myMenu()"><i class="fa-solid fa-bars"></i></a>
+        <a href="#umiejetnosci">Umiejętności</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#pasje">Zainteresowania</a>
+        <a href="/">Spiżarnia</a>
+        
+    
     </nav>
 
 <main>
@@ -102,7 +104,7 @@
             Do stylizacji używam CSS3 - posiadanie kontroli nad wyglądem jest naprawdę budujące.  
             Umiem też wykorzystywać framework Bootstrap5, co jest bardzo pomocne.
             Na stronie posłużyłem się JS do wykonanie drobnych animacji. 
-            Następnym krokiem jest opanowanie Reacta, ale to z&nbsp;czasem.
+            Następnym krokiem jest zapoznanie się z&nbsp;Reactem, ale to z&nbsp;czasem.
             Jest jeszcze kilka innych umiejętności jak: Praca z&nbsp;SQL przez MySQL czy PostgreSQL do tworzenia bazy danych.
             Bezwzrokowa obsługa klawiatury typu Dvoraka - już od czasów studiów przy odpowiednim flow piszę szybciej niż czytam. 
             Przez okres studiów korzystałem z&nbsp;systemu Linux, obecnie z&nbsp;Windowsa.
@@ -112,95 +114,95 @@
    
     <section class="row">
         
-            <header><h2><a name="projekty">Moje projekty</a></h2></header>
+        <header><h2><a name="projekty">Moje projekty</a></h2></header>
 
-            <div class="description">
-                Wiele było prób, ćwiczeń, nauki i&nbsp;poszukiwań rozwiązań problemów. 
-                Napisane programy wciąż nie są idealne i&nbsp;jest co przy nich robić.
-                Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy.
-                Zdobyta wiedza i umiejętność w praktyce podczas rozwiązywania problemów jest niezastąpiona. 
-                Patrząc w&nbsp;przyszłość na to co napisałem myślę sobie: "Łooo Paaanie kto Panu tak to napisał"&#128517; i&nbsp;przystępuje do refaktoryzacji swojego kodu. 
-                <br>Oto trzy wybrane projekty.
-                
-            </div>
+        <div class="description">
+            Wiele było prób, ćwiczeń, nauki i&nbsp;poszukiwań rozwiązań problemów. 
+            Napisane programy wciąż nie są idealne i&nbsp;jest co przy nich robić.
+            Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy.
+            Zdobyta wiedza i umiejętność w praktyce podczas rozwiązywania problemów jest niezastąpiona. 
+            Patrząc w&nbsp;przyszłość na to co napisałem myślę sobie: "Łooo Paaanie kto Panu tak to napisał"&#128517; i&nbsp;przystępuje do refaktoryzacji swojego kodu. 
+            <br>Oto trzy wybrane projekty.
+        </div>
 
+            <div class=" row bulkPackage">
+                <div class=" col-s-4 project">
+                    <header><h3>Deszyfrator</h3></header>
 
-            <div class=" col-s-4 project">
-                <header><h3>Deszyfrator</h3></header>
-
-                <figure>
-                    <img src="/static/image/deszyfrator.jpg" alt="preenscreen programu">
-                    <figcaption>Deszyfrator Tote</figcaption>
-                </figure>
-                
-                
-                <div class="description">
-                    <b>Opis:</b> Bardzo prosty program pomocny w&nbsp;rozszyfrowaniu celu przeznaczenia skrzynek 
-                    transportowych w&nbsp;centrum dystrybucji, 
-                    napisany w&nbsp;Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter do wygodniejszej obsługi.<br>
-                    <b>Cel:</b>
-                    Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki by wyeliminować błędy i&nbsp;przyspieszyć proces sortowania.
-                </div>
-                
-            
-                <div class="pojhub">
-                    <a class="github" href="https://github.com/SiedzacyBobr/SorterForTote"><i class="gitclick fa-brands fa-github"></i></a>
-                </div>
-            </div>
-
-            
-            <div class=" col-s-4 project">
-                <header><h3>Spiżarnia comp</h3></header>
-                
-
-                
                     <figure>
-                        <img src="/static/image/spizarniacomp.jpg" alt="preenscreen programu">
-                        <figcaption>Spiżarnia Comp.</figcaption>
+                        <img src="/static/image/deszyfrator.jpg" alt="preenscreen programu">
+                        <figcaption>Deszyfrator tote</figcaption>
                     </figure>
                     
-            
+                    
                     <div class="description">
-                        <b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;
-                        Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
-                        <br><b>Cel: </b> Wygodniejsze niż w&nbsp;exelu panowanie nad posiadanymi 
-                        zapasami w&nbsp;własnej spiżarni i&nbsp;automatyczne generowanie listy 
-                        potrzebnych zakupów do uzupełnienia bezpiecznego stanu z&nbsp;możliwością wydruku.
+                        <b>Opis:</b> Bardzo prosty program pomocny w&nbsp;rozszyfrowaniu celu przeznaczenia skrzynek 
+                        transportowych w&nbsp;centrum dystrybucji, 
+                        napisany w&nbsp;Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter do wygodniejszej obsługi.<br>
+                        <b>Cel:</b>
+                        Ułatwić sortowanie skrzynek z&nbsp;materiałem do wysyłki by wyeliminować błędy i&nbsp;przyspieszyć proces sortowania.
                     </div>
-            
-    
-                <div class="pojhub">
-                    <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
+                    
+                
+                    <div class="pojhub">
+                        <a class="github" href="https://github.com/SiedzacyBobr/SorterForTote"><i class="gitclick fa-brands fa-github"></i></a>
+                    </div>
                 </div>
-            </div>
 
+                
+                <div class=" col-s-4 project">
+                    <header><h3>Spiżarnia comp.</h3></header>
+                    
 
-            <div class=" col-s-4 project">
-                <header><h3>Spiżarnia Web.</h3></header>
+                    
+                        <figure>
+                            <img src="/static/image/spizarniacomp.jpg" alt="preenscreen programu">
+                            <figcaption>Spiżarnia comp.</figcaption>
+                        </figure>
+                        
                 
+                        <div class="description">
+                            <b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;
+                            Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
+                            <br><b>Cel: </b> Wygodniejsze niż w&nbsp;exelu panowanie nad posiadanymi 
+                            zapasami w&nbsp;własnej spiżarni i&nbsp;automatyczne generowanie listy 
+                            potrzebnych zakupów do uzupełnienia bezpiecznego stanu z&nbsp;możliwością wydruku.
+                        </div>
                 
-                    <figure>
-                        <img src="/static/image/spizarniaweb.jpg" alt="preenscreen programu">
-                        <figcaption>Spiżarnia Web.</figcaption>
-                    </figure>
-                
-                
-                    <div class="description">
-                        <b>Opis:</b> Aplikacja webowa do zarządzania spiżarnią domową z&nbsp;wykorzystaniem frameworka Django. 
-                        <br><b>Cel:</b> Udostępnić aplikację przez internet by był łatwy dostęp z&nbsp;telefonu. &#128526;
-                        Co z&nbsp;założenia ma ułatwić korzystanie z&nbsp;aplikacji w&nbsp;domu i&nbsp;sklepie &#128512;
-                    </div>
-
-            
+        
                     <div class="pojhub">
                         <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
                     </div>
+                </div>
 
+
+                <div class=" col-s-4 project">
+                    <header><h3>Spiżarnia app web.</h3></header>
+                    
+                    
+                        <figure>
+                            <img src="/static/image/spizarniaweb.jpg" alt="preenscreen programu">
+                            <figcaption>Spiżarnia app web.</figcaption>
+                        </figure>
+                    
+                    
+                        <div class="description">
+                            <b>Opis:</b> Aplikacja webowa do zarządzania spiżarnią domową z&nbsp;wykorzystaniem frameworka Django. 
+                            <br><b>Cel:</b> Udostępnić aplikację przez internet by był łatwy dostęp z&nbsp;telefonu. &#128526;
+                            Co z&nbsp;założenia ma ułatwić korzystanie z&nbsp;aplikacji w&nbsp;domu i&nbsp;sklepie &#128512;
+                        </div>
+
+                
+                        <div class="pojhub">
+                            <a class="github" href="https://github.com/SiedzacyBobr/MyPantry"><i class="gitclick fa-brands fa-github"></i></a>
+                        </div>
+
+                </div>
             </div>
         
     </section>
 
-    <section class="row">
+    <section >
 
         <header><h2><a name="pasje">Zainteresowania i&nbsp;pasje </a></h2></header>
 
@@ -211,23 +213,68 @@
             Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje.
             Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, skalne aranżacje. 
             A&nbsp;gdy wieje i&nbsp;jest okazja podnoszę żagle i&nbsp;żegluję. 
-            Kilka razy do roku wędruje po górach i&nbsp;zjeżdżam na nartach.
+            Kilka razy do roku wędruje po górach i&nbsp;salach. 
+            Moją uwagę przyciągają ciekawostki z&nbsp;świata przyrody i&nbsp;techniki. 
         </div>
 
-        <div id="passions">
+        <div class="passions-conteiner">
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass1.jpg">
+                <figcaption>Wędrówka po Norwegii</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass2.jpg">
+                <figcaption>Wykonany w starym pniu ogródek kserotermiczny</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass3.jpg">
+                <figcaption>Wschód słońca nad jeziorem</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass4.jpg">
+                <figcaption>Spływ kajakiem</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass5.jpg">
+                <figcaption>Spotkany Łoś podczas wędrówki</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass6.jpg">
+                <figcaption>Namalowany obrazek na deseczce</figcaption>
+            </figure>
+
+            <figure class="passion fade">
+                <img src="/static/image/fotopassion1/pass7.jpg">
+                <figcaption>Żeglowanie pod pełnymi żaglami</figcaption>
+            </figure>
+
+
+
+
+
+
+
+
+
+
 
         </div>
-
     </section>
-
-    
+       
 
 </article>
+
 </main>
 
 <footer>
     <address>Autor:  Krzysztof Wróblewski <a href="mailto:krzysztof.wroblewski.01@gmail.com"> 
-        <i class="fa-solid fa-envelope"></i></a></address>
+        <i class=" envelope fa-solid fa-envelope"></i></a></address>
     &copy wszelkie prawa zastrzeżone.
 
     <div> 
@@ -236,6 +283,8 @@
     </div>
 
 </footer>
+
+
 
 </body>
 

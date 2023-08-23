@@ -1,15 +1,15 @@
-* {
-  box-sizing: border-box;
-}
+/* ==> ustawienie root dla REM <== */
 
-/* ustawienie root dla REM */
 html{
   font-size: 16px;
-
 }
 
+/* ==> ustawienia body <== */
+
 body{
-  background-image: linear-gradient(to right, rgba(133, 93, 71, 0.664) , rgba(88, 99, 129, 0.637));
+  background-image: linear-gradient(to right, rgba(189, 164, 95, 0.664) , rgba(88, 99, 129, 0.637));
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -21,6 +21,8 @@ body{
   margin: 0;
 }
 */
+
+/* ==> ustawienia głównych elementów strony <== */
 
 article{
 
@@ -43,6 +45,13 @@ h1{
   margin: 21px;
 }
 
+#demo{
+  font-size: 3rem;
+  color: red;
+  border: dotted 5px yellow;
+  background-color: orange;
+}
+
 section{
   padding: 21px;
   border-radius: 5px;
@@ -56,14 +65,14 @@ h2{
   font-size: 2rem;
   border-top: #383232 dashed 1px;
   border-bottom: #383232 dashed 1px;
-  margin: 13px;
   padding: 8px;
-
+  margin: 0;
 }
 
 h3{
   font-size: 1.5rem;
   border-bottom: dotted black 2px;
+  padding-bottom: 5px;
 }
 
 .description{
@@ -71,14 +80,26 @@ h3{
   text-align: justify;
   padding: 13px;
   font-size: 1.2rem;
-  background-color: rgba(230, 240, 253, 0.5) ;
+  background-color: rgba(250, 250, 250, 0.774) ;
   border-radius: 5px;
+  margin-top: 13px;
+}
+
+.skills{
+  background-color: white;
+  font-size: 3rem;
+  text-align: center;
+  border-radius: 5px;
+  letter-spacing: 5px;
+  padding: 8px;
+  margin-top: 13px;
 }
 
 img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  margin-top: 13px;
 }
 
 figure{
@@ -86,15 +107,164 @@ figure{
   min-width: 235px;
   text-align: center;
   margin: 0;
-  margin-bottom: 21px;
  }
 
 figcaption{
   padding: 0;
   margin: 0;
+  margin-top: 8px;
   font-size: 1rem;
   color: black;
   text-align: center;
+}
+
+footer{
+  background-color: #151111;
+  padding: 5px;
+  font-size: 0.8rem;
+  font-family: 'Belleza', cursive;
+  color: rgb(219, 200, 200);
+  text-align: center;
+}
+
+footer a{
+  text-decoration: none;
+}
+
+.envelope{
+  color:rgb(219, 200, 200);
+  margin-left: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.envelope:hover{
+color: white;
+margin-left: 8px;
+transform: scale(2) rotate(360deg);
+}
+
+
+/* ==> pasek nawigacji na stronie <== */
+
+.navbar{
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Belleza', cursive;
+  padding:13px;
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: darkblue;
+  padding: 5px;
+  display: inline-block;
+}
+
+.navbar a:hover{
+  background-color: #99B7F7;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+.sticky{
+  width: 100%;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+/* ==> ustawienia dla kontenera prezentacji projektów <== */
+
+.project{
+  background: none;
+  padding: 13px;
+  margin-top: 13px;
+  
+}
+
+.bulkPackage{
+  background-color: rgba(255, 255, 255, 0.5) ;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 13px;
+
+}
+
+.pojhub{
+  width: 100%;
+  text-align: center;
+  border-top: black dotted 2px;
+  padding-top: 10px;
+}
+
+.gitclick{
+  transition: all .2s ease-in-out;
+}
+
+.gitclick:hover{
+  transform: scale(1.2) rotate(-20deg);
+}
+
+.github{
+  font-size: 50px;
+  color: rgb(121, 121, 121);
+  margin-bottom: 20px;
+  
+}
+
+.github:hover{
+  color: #000000;
+  
+}
+
+/* ==> ustawienia dla kontenera Zainteresowania i pasje <== */
+
+.passion{
+  display: none;
+  
+}
+
+.passion img{
+  vertical-align: middle;
+}
+.passion figcaption{
+  margin-top: 13px;
+  background-color: rgba(255, 255, 255, 0.61);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.passions-conteiner {
+  max-width: 500px;
+  position: relative;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/* ==> ustawienie responsywności dla strony <== */
+
+* {
+  box-sizing: border-box;
 }
 
 .row::after {
@@ -127,13 +297,25 @@ figcaption{
     padding: 13px;
   }
 
-  
-
-  nav a{
-    font-size: 1.2rem;
+  .navbar{
+    text-align: left;
   }
-}
 
+  .navbar a{
+    display: none;
+  }
+
+  .navbar .icon {
+    display: block;
+  }
+  
+  .navbar.responsive a{
+    float: none;
+    text-align: left;
+    display: block;
+  }
+
+}
 
 @media only screen and (min-width: 1000px) {
   
@@ -159,128 +341,4 @@ figcaption{
 
 }
 
-footer{
-  background-color: #151111;
-  padding: 5px;
-  font-size: 0.8rem;
-  font-family: 'Belleza', cursive;
-  color: rgb(219, 200, 200);
-  text-align: center;
-}
 
-footer a{
-  text-decoration: none;
-  color:rgb(219, 200, 200);
-}
-
-footer a:hover{
-  color: white;
-}
-
-nav{
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: 'Belleza', cursive;
-  padding-top: 7px;
-  padding-bottom: 0;
-}
-
-.sticky{
-  width: 100%;
-  position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 100;
-}
-
-ul{
-  padding: 5px;
-  margin: 0;
-  list-style-type: none;
-  display: inline-block;
-}
-
-ul a {
-  text-decoration: none;
-  color: darkblue;
-  padding-left:  10px;
-  padding-right: 10px;
-  display: block;
-}
-
-ul > li{
-  float: left;
-  border-right: 1px dotted black;
-  border-radius: 5px;
-}
-
-ul > li:first-child{
-  border-left: 1px dotted black;
-}
-
-ul > li:hover{
-  background-color: #99B7F7;
-  
-}
-
-ul > li > a:hover{
-  color: white;
-}
-
-.skills{
-  background-color: white;
-  font-size: 3rem;
-  text-align: center;
-  border-radius: 5px;
-  letter-spacing: 5px;
-  padding: 8px;
-  margin-bottom: 8px;
-}
-
-
-.project{
-  background-color: rgba(255, 255, 255, 0.5) ;
-  padding: 13px;
-  margin-top: 13px;
-  border-radius: 5px;
-  border: black solid 2px;
-  
-}
-
-.pojhub{
-  width: 100%;
-  text-align: center;
-  border-top: black dotted 2px;
-  padding-top: 10px;
-}
-
-.gitclick{
-  transition: all .2s ease-in-out;
-}
-
-.gitclick:hover{
-  transform: scale(1.2) rotate(-20deg);
-}
-
-.github{
-  font-size: 50px;
-  color: rgb(121, 121, 121);
-  margin-bottom: 20px;
-  
-}
-
-.github:hover{
-  color: #000000;
-  
-}
-
-#passions{
-  text-align: center;
-  margin: 21px;
-}
-
-#passions img{
-  border: black solid 3px;
-  max-width: 500px;
-}
