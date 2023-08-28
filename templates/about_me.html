@@ -11,32 +11,34 @@
 
     <script src="https://kit.fontawesome.com/e515080353.js" crossorigin="anonymous"></script>
     <script src="{% static 'about_me_script.js' %}"></script>
-    
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+			integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 			crossorigin="anonymous"></script>
+    <script src="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js"></script>
 
-    <link rel="stylesheet" href="{% static 'pantry_style_about_me.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?&family=Belleza&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet"  href="{% static 'pantry_style_about_me.css' %}">
+    <link rel="preconnect"  href="https://fonts.googleapis.com">
+    <link rel="preconnect"  href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?&family=Belleza&display=swap" >
+    <link rel="icon" href="/static/favicon.ico">
 
 </head>
 
 <body onload="nextPassion()">
     <header>
         <h1>Krzysztof Wróblewski</h1>
+        
     </header>
 
-    <nav class="sticky navbar" id="myNavbar">
+    <nav class="navbar" id="myNavbar">
         
-        <a href="javascript:void(0);" class="icon" onclick="myMenu()"><i class="fa-solid fa-bars"></i></a>
-        <a href="#umiejetnosci">Umiejętności</a>
-        <a href="#projekty">Projekty</a>
-        <a href="#pasje">Zainteresowania</a>
-        <a href="/">Spiżarnia</a>
+        <a href="javascript:void(0);" class="iconbar" onclick="myMenu()"> <i class="fa-solid fa-bars"></i></a>
+        <a href="#umiejetnosci"> Umiejętności</a>
+        <a href="#projekty"> Projekty</a>
+        <a href="#pasje"> Zainteresowania</a>
+        <a href="/"> Spiżarnia</a>
+        <a> <i onclick="darkscreen()" class="fa-solid fa-moon"></i></a>
         
-    
     </nav>
 
 <main>
@@ -57,18 +59,18 @@
             
 
             
-            <div class="col-t-12 col-s-9 description">
+            <div class="col-t-12 col-s-9 description" id="opisM">
 
-                Tworzenie, stwarzanie, projektowanie, wymyślanie, odkrywanie, eksplorowanie to jest coś co mnie kręci. 
+                Tworzenie, stwarzanie, projektowanie, wymyślanie, odkrywanie, eksplorowanie - to jest coś co mnie kręci. 
                 
                 Świat aplikacji webowych pod tym względem niema dla mojego umysłu granic 
                 a&nbsp;każdy jego zakątek jest godny kolejnej przygody. 
 
                 Temat jest tak obszerny, z&nbsp;tak wieloma jeszcze nieodkrytymi możliwościami, że patrząc 
-                w&nbsp;dal z&nbsp;wrażenia mnie zatyka i&nbsp;pobudza.
+                w&nbsp;dal z&nbsp;wrażenia mnie zatyka i&nbsp;rozbudzia mają wyobraźnię.
 
                 Programowanie rozpocząłem od języka Python, bo mnie zafascynował swą zgrabnością 
-                i&nbsp;czytelnością
+                i&nbsp;czytelnością.
 
                 Początki nie były łatwe, ale teraz poznawanie kolejnych nowości 
                 i&nbsp;ich układanie idzie mi znaczenie łatwiej.
@@ -85,29 +87,31 @@
         <header><h2><a name="umiejetnosci">Umiejętność </a></h2></header>
 
         <div class="skills">
-            <i class="fa-brands fa-python"></i>
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-js"></i>
-            <i class="fa-brands fa-bootstrap"></i>
-            <i class="fa-brands fa-react"></i>
-            <i class="fa-brands fa-square-git"></i>
-            <i class="fa-brands fa-wordpress"></i>
+            <i id="pythoni" class="fa-brands fa-python"></i>
+            <i id="htmli" class="fa-brands fa-html5"></i>
+            <i id="cssi" class="fa-brands fa-css3-alt"></i>
+            <i id="jsi" class="fa-brands fa-js"></i>
+            <i id="databasei" class="fa-solid fa-database"></i>
+            <i id="bootstrapi" class="fa-brands fa-bootstrap"></i>
+            <i id="reacti" class="fa-brands fa-react"></i>
+            <i id="giti" class="fa-brands fa-square-git"></i>
+            <i id="wordpressi" class="fa-brands fa-wordpress"></i>
+            <i id="linuxi" class="fa-brands fa-linux"></i>
         </div>
 
         <div class="description">
-            Trzonem moich umiejętności programowania jest język Python a&nbsp;wraz z&nbsp;nim 
-            farmework Django. Pisane przeze mnie programy nie są zaawansowane, ale wystarczające do realizacji pomysłów.
-            Swoje repozytorium na GitHubie obsługuję z&nbsp;wiersza poleceń Git Busha.
+            Trzonem moich umiejętności programowania jest język <span id="pythoni" onmouseover="pythonp()"><b>Python</b></span> a&nbsp;wraz z&nbsp;nim 
+            farmework <b>Django.</b> Pisane przeze mnie programy nie są zaawansowane, ale wystarczające do realizacji pomysłów.
+            Swoje repozytorium mam na <b>GitHubie</b> obsługuję go poleceniami <span id="giti" onmouseover="gitp()"><b>Git</b></span> z&nbsp;wiersza poleceń <b>Git Busha</b>.
             Może to nic nadzwyczajnego a&nbsp;jednak cieszy i&nbsp;upraszcza pracę. 
-            Strony tworzę przez HTML5 choć w&nbsp;przeszłości korzystałem też z&nbsp;Wordpressa. 
-            Do stylizacji używam CSS3 - posiadanie kontroli nad wyglądem jest naprawdę budujące.  
-            Umiem też wykorzystywać framework Bootstrap5, co jest bardzo pomocne.
-            Na stronie posłużyłem się JS do wykonanie drobnych animacji. 
-            Następnym krokiem jest zapoznanie się z&nbsp;Reactem, ale to z&nbsp;czasem.
-            Jest jeszcze kilka innych umiejętności jak: Praca z&nbsp;SQL przez MySQL czy PostgreSQL do tworzenia bazy danych.
+            Strony tworzę kożystając z <span id="htmli" onmouseover="htmlp()"><b>HTML5</b></span>. 
+            Do stylizacji używam <span id="cssii" onmouseover="cssp()"><b>CSS3 </b></span> - posiadanie kontroli nad wyglądem jest naprawdę budujące.  
+            Umiem też wykorzystywać framework <span id="bootstrapi" onmouseover="bootstrapp()"><b>Bootstrap5,</b></span> co jest bardzo pomocne.
+            Na stronie posłużyłem się <span id="jsi" onmouseover="jsp()"><b>JS</b></span> i&nbsp;biblioteką <b>Jquery</b> do wykonania drobnych animacji. 
+            Następnym krokiem jest zapoznanie się z&nbsp;<span id="reacti" onmouseover="reactp()"><b>Reactem</b></span>, ale to z&nbsp;czasem.
+            Jest jeszcze kilka innych umiejętności jak: Praca z&nbsp;<span id="databasei" onmouseover="databasep()"><b>SQL</b></span> przez MySQL czy PostgreSQL do tworzenia bazy danych.
             Bezwzrokowa obsługa klawiatury typu Dvoraka - już od czasów studiów przy odpowiednim flow piszę szybciej niż czytam. 
-            Przez okres studiów korzystałem z&nbsp;systemu Linux, obecnie z&nbsp;Windowsa.
+            Przez okres studiów korzystałem z&nbsp;systemu <span id="linuxi" onmouseover="linuxp()"><b>Linux</b></span>, obecnie z&nbsp;Windowsa. A ostoni mój projekt stworzyłem w <span id="wordpressi" onmouseover="wordpressp()"><b>Wordpressie</b></span>
         </div> 
 
     </section>
@@ -120,12 +124,13 @@
             Wiele było prób, ćwiczeń, nauki i&nbsp;poszukiwań rozwiązań problemów. 
             Napisane programy wciąż nie są idealne i&nbsp;jest co przy nich robić.
             Jednak każdy kolejny napisany program, jest lepszy &#128515; ładniejszy, zgrabniejszy.
-            Zdobyta wiedza i umiejętność w praktyce podczas rozwiązywania problemów jest niezastąpiona. 
-            Patrząc w&nbsp;przyszłość na to co napisałem myślę sobie: "Łooo Paaanie kto Panu tak to napisał"&#128517; i&nbsp;przystępuje do refaktoryzacji swojego kodu. 
+            Zdobyta wiedza i&nbsp;umiejętność w&nbsp;praktyce podczas rozwiązywania problemów jest niezastąpiona. 
+            Patrząc w&nbsp;przyszłość na to co napisałem myślę sobie: 
+            "Łooo Paaanie kto Panu tak to napisał"&#128517; i&nbsp;przystępuje do refaktoryzacji swojego kodu. 
             <br>Oto trzy wybrane projekty.
         </div>
 
-            <div class=" row bulkPackage">
+            <div class="row bulkPackage">
                 <div class=" col-s-4 project">
                     <header><h3>Deszyfrator</h3></header>
 
@@ -162,8 +167,8 @@
                         
                 
                         <div class="description">
-                            <b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;
-                            Pythonie z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
+                            <b>Opis: </b>Program do zarządzania spiżarnią domową napisany w&nbsp;Pythonie 
+                            z&nbsp;wykorzystaniem biblioteki Tkinter by ułatwić jego obsługę.
                             <br><b>Cel: </b> Wygodniejsze niż w&nbsp;exelu panowanie nad posiadanymi 
                             zapasami w&nbsp;własnej spiżarni i&nbsp;automatyczne generowanie listy 
                             potrzebnych zakupów do uzupełnienia bezpiecznego stanu z&nbsp;możliwością wydruku.
@@ -202,6 +207,20 @@
         
     </section>
 
+    <section class="row">
+        <header><h2> Projekt 3HGs 08.2023 </h2></header>
+        
+        <iframe class="col-t-12 col-s-5" src="https://www.threehatsgames.pl/" title="3HGs"></iframe>
+
+        <div class="col-t-12 col-s-7 description">
+            Wystartowałem z nomym projektem <a class="linka" href="https://www.threehatsgames.pl/"> 
+            <b>www.ThreeHatsGames.pl </b></a> wykonywanym w Wordpressie.
+            Strona będzie wykonana dla miłośników organizacji gier terenowych. Pierwszym zamierzeniem będzie przedstawinie
+            grupy fascynatów i&nbsp;ich projektów. W&nbsp;dalszej kolejności baza pomysłów.  
+        </div>
+
+    </section>
+
     <section >
 
         <header><h2><a name="pasje">Zainteresowania i&nbsp;pasje </a></h2></header>
@@ -213,7 +232,7 @@
             Od czasu do czasu szkicuje co mnie relaksuje, rzadziej maluje.
             Czas wolny spędzam w&nbsp;ogrodzie tworząc, pielęgnując, skalne aranżacje. 
             A&nbsp;gdy wieje i&nbsp;jest okazja podnoszę żagle i&nbsp;żegluję. 
-            Kilka razy do roku wędruje po górach i&nbsp;salach. 
+            Kilka razy do roku wędruje po górach i&nbsp;lasach. 
             Moją uwagę przyciągają ciekawostki z&nbsp;świata przyrody i&nbsp;techniki. 
         </div>
 
@@ -253,15 +272,6 @@
                 <img src="/static/image/fotopassion1/pass7.jpg">
                 <figcaption>Żeglowanie pod pełnymi żaglami</figcaption>
             </figure>
-
-
-
-
-
-
-
-
-
 
 
         </div>

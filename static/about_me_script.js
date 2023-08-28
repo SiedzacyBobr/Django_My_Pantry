@@ -17,10 +17,6 @@ function nextPassion()  {
   setTimeout(nextPassion, 5000);
 }
 
-function clickTest() {
-  document.getElementById("demo").innerHTML="coś tam coś tam - trójząb";
-}
-
 
 function myMenu(){
   var deve = document.getElementById("myNavbar");
@@ -32,3 +28,69 @@ function myMenu(){
   }
 
 }
+
+
+// testy i nauka Djqery 
+
+
+
+function pythonp(){
+  $("#pythoni").animate({fontSize: '2rem'});
+  $("#pythoni").animate({ fontSize: '3rem'});
+};
+
+function htmlp(){
+  $("#htmli").animate({fontSize: '2rem'});
+  $("#htmli").animate({ fontSize: '3rem'});
+};
+
+function cssp(){
+  $("#cssi").animate({fontSize: '2rem'});
+  $("#cssi").animate({ fontSize: '3rem'});
+};
+
+function jsp(){
+  $("#jsi").animate({fontSize: '2rem'});
+  $("#jsi").animate({ fontSize: '3rem'});
+};
+
+function databasep(){
+  $("#databasei").animate({fontSize: '2rem'});
+  $("#databasei").animate({ fontSize: '3rem'});
+};
+
+function bootstrapp(){
+  $("#bootstrapi").animate({fontSize: '2rem'});
+  $("#bootstrapi").animate({ fontSize: '3rem'});
+};
+
+function reactp(){
+  $("#reacti").animate({fontSize: '2rem'});
+  $("#reacti").animate({ fontSize: '3rem'});
+};
+
+function gitp(){
+  $("#giti").animate({fontSize: '2rem'});
+  $("#giti").animate({ fontSize: '3rem'});
+};
+
+function wordpressp(){
+  $("#wordpressi").animate({fontSize: '2rem'});
+  $("#wordpressi").animate({ fontSize: '3rem'});
+};
+
+function linuxp(){
+  $("#linuxi").animate({fontSize: '2rem'});
+  $("#linuxi").animate({ fontSize: '3rem'});
+};
+
+function darkscreen(){
+  $(".description, section, .bulkPackage").toggleClass("darkarticle");
+  $("body").toggleClass("darkbody");
+  $(".skills,.passion figcaption, nav").toggleClass("darkstripes");
+  $("h2, h3, .description, figcaption").toggleClass("silvertext");
+
+
+
+}
+

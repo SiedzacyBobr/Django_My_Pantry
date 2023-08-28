@@ -2,6 +2,7 @@
 
 html{
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 /* ==> ustawienia body <== */
@@ -35,6 +36,7 @@ article{
 
 header{
   text-align: center;
+  
 }
 
 h1{
@@ -42,14 +44,6 @@ h1{
   padding: 5px;
   font-family: 'Belleza', cursive;
   font-size: 2.5rem;
-  margin: 21px;
-}
-
-#demo{
-  font-size: 3rem;
-  color: red;
-  border: dotted 5px yellow;
-  background-color: orange;
 }
 
 section{
@@ -57,6 +51,7 @@ section{
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.5);
   margin-top: 50px;
+
 }
 
 h2{
@@ -83,6 +78,9 @@ h3{
   background-color: rgba(250, 250, 250, 0.774) ;
   border-radius: 5px;
   margin-top: 13px;
+  text-indent: 50px;
+  line-height: 1.5;
+
 }
 
 .skills{
@@ -116,6 +114,13 @@ figcaption{
   font-size: 1rem;
   color: black;
   text-align: center;
+}
+
+iframe{
+  height: 450px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 13px;
 }
 
 footer{
@@ -152,6 +157,11 @@ transform: scale(2) rotate(360deg);
   font-family: 'Belleza', cursive;
   padding:13px;
   margin: 0;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
 }
 
 .navbar a {
@@ -168,16 +178,8 @@ transform: scale(2) rotate(360deg);
   padding: 5px;
 }
 
-.navbar .icon {
+.navbar .iconbar {
   display: none;
-}
-
-.sticky{
-  width: 100%;
-  position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 100;
 }
 
 /* ==> ustawienia dla kontenera prezentacji projektów <== */
@@ -222,6 +224,11 @@ transform: scale(2) rotate(360deg);
 .github:hover{
   color: #000000;
   
+}
+
+.linka{
+  text-decoration: none;
+  color: #000000;
 }
 
 /* ==> ustawienia dla kontenera Zainteresowania i pasje <== */
@@ -305,7 +312,7 @@ transform: scale(2) rotate(360deg);
     display: none;
   }
 
-  .navbar .icon {
+  .navbar .iconbar {
     display: block;
   }
   
@@ -341,4 +348,22 @@ transform: scale(2) rotate(360deg);
 
 }
 
+.darkarticle{
+  background-color: #072330;
+}
 
+.silvertext{
+  color: silver;
+}
+
+.darkbody{
+  background-image: linear-gradient(
+    to right, 
+    rgba(36, 44, 53, 0.664), 
+    rgba(50, 54, 56, 0.637));
+}
+
+.darkstripes{
+  color: black;
+  background-color: silver;
+}
